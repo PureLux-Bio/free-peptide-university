@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /
+# Review build — not for indexing. Remove this file (or set Allow) before public launch.
