@@ -331,6 +331,22 @@
     .spotlight h3{margin:0 0 2px;color:var(--charcoal)}
     .spotlight .cls{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);font-weight:700;margin-bottom:10px}
     .spotlight p{margin:0;font-size:.92rem;color:var(--charcoal-soft)}
+    /* Compound card with real product vial */
+    .cmp{display:flex;gap:16px;align-items:center;background:var(--surface);border:1px solid rgba(201,162,75,.2);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow-sm);transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+    .cmp:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+    .cmp img{width:84px;height:84px;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 8px 18px rgba(0,0,0,.6))}
+    .cmp h3{margin:0 0 2px;font-size:1.12rem}
+    .cmp .cls{font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);font-weight:700;margin-bottom:6px}
+    .cmp p{margin:0;font-size:.87rem;color:var(--charcoal-soft)}
+    /* Product collection band (real PureLux photography) */
+    .collection{background:linear-gradient(180deg,var(--ivory),#0b0b0d)}
+    .pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:42px}
+    .pcard{background:var(--surface);border:1px solid rgba(201,162,75,.16);border-radius:14px;padding:22px 14px 18px;text-align:center;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+    .pcard:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+    .pcard img{width:100%;max-width:128px;aspect-ratio:1;object-fit:contain;margin:0 auto 12px;filter:drop-shadow(0 12px 24px rgba(0,0,0,.55))}
+    .pcard b{display:block;font-family:'Playfair Display';font-size:1rem;color:var(--charcoal);line-height:1.2}
+    .pcard small{color:var(--muted);font-size:.72rem;letter-spacing:.05em}
+    @media(max-width:860px){.pgrid{grid-template-columns:repeat(2,1fr)}}
     .ltable{width:100%;border-collapse:collapse;margin:22px 0;font-size:.92rem}
     .ltable th,.ltable td{text-align:left;padding:12px 14px;border-bottom:1px solid rgba(201,162,75,.18);vertical-align:top}
     .ltable th{font-family:'Playfair Display';font-weight:600;color:var(--gold-deep);background:var(--cream)}
@@ -494,6 +510,27 @@
           <p>"It feels exclusive in the best way — like being handed the notes the experienced people never share. Premium, calm, trustworthy."</p>
           <div class="who"><img loading="lazy" src="https://randomuser.me/api/portraits/men/52.jpg" alt="Portrait of member Marcus T." /><div><b>Marcus T.</b><small>Researching before deciding</small></div></div>
         </article>
+      </div>
+    </section>
+
+    <!-- ---------- THE COLLECTION (real PureLux product photography) ---------- -->
+    <section class="collection">
+      <div class="wrap center reveal">
+        <div class="eyebrow">The Materials</div>
+        <h2>The research compounds, in the flesh</h2>
+        <p class="muted" style="max-width:600px;margin:14px auto 0">The materials referenced throughout this library are supplied by PureLux Bio — sealed, lab-tested, certificate of analysis on request. For research use only.</p>
+        <div class="pgrid">
+          <div class="pcard"><img loading="lazy" src="img/bpc-157.png" alt="BPC-157 research vial" /><b>BPC-157</b><small>Healing &amp; recovery</small></div>
+          <div class="pcard"><img loading="lazy" src="img/ghk-cu.png" alt="GHK-Cu research vial" /><b>GHK-Cu</b><small>Cosmetic &amp; skin</small></div>
+          <div class="pcard"><img loading="lazy" src="img/glp-3.png" alt="GLP-3 research vial" /><b>GLP-3</b><small>Metabolic / GLP</small></div>
+          <div class="pcard"><img loading="lazy" src="img/nad.png" alt="NAD+ research vial" /><b>NAD+</b><small>Longevity</small></div>
+          <div class="pcard"><img loading="lazy" src="img/cjc-ipamorelin.png" alt="CJC-1295 plus Ipamorelin research vial" /><b>CJC-1295 + Ipamorelin</b><small>GH secretagogues</small></div>
+          <div class="pcard"><img loading="lazy" src="img/tesamorelin.png" alt="Tesamorelin research vial" /><b>Tesamorelin</b><small>GH secretagogue</small></div>
+          <div class="pcard"><img loading="lazy" src="img/mots-c.png" alt="MOTS-c research vial" /><b>MOTS-c</b><small>Metabolic / cellular</small></div>
+          <div class="pcard"><img loading="lazy" src="img/glow.png" alt="Glow research blend vial" /><b>Glow</b><small>Research blend</small></div>
+        </div>
+        <div style="margin-top:34px"><a class="btn btn-ghost" href="https://www.pureluxbio.com" target="_blank" rel="noopener">View the full collection at PureLux Bio →</a></div>
+        <p class="capnote" style="margin-top:16px">For research use only. Not for human or veterinary use. Not a drug or medical device.</p>
       </div>
     </section>
 
@@ -973,18 +1010,24 @@
 
     /* ===== CH7 ===== */
     {title:'Compound Spotlights', body:`
-      <p>Here are concise, research-framed profiles of the compounds you will see discussed most. Each notes its family and what the research explores — never what anyone should do. Treat these as orientation, not endorsement.</p>
-      <div class="spotlight"><h3>BPC-157</h3><div class="cls">Healing &amp; recovery</div><p>A synthetic peptide derived from a sequence identified in gastric juice. Among the most-studied compounds in its class, where preclinical research explores its role in tissue and gastrointestinal models. Most data is early-stage.</p></div>
-      <div class="spotlight"><h3>TB-500</h3><div class="cls">Healing &amp; recovery</div><p>A synthetic fragment related to a naturally occurring protein. Research explores its associations with cellular movement and tissue research models, and it is frequently discussed alongside BPC-157.</p></div>
-      <div class="spotlight"><h3>GLP-1</h3><div class="cls">Metabolic / GLP</div><p>One of the most prominent metabolic peptides in current research. Studies explore its role in glucose and energy-signaling pathways. Heavily researched and heavily discussed — and heavily marketed, so apply Chapter 3.</p></div>
-      <div class="spotlight"><h3>GHK-Cu</h3><div class="cls">Cosmetic &amp; skin</div><p>A naturally occurring copper-binding peptide. Research explores its associations with skin, collagen, and tissue-remodeling models, which is why it appears often in cosmetic research.</p></div>
-      <div class="spotlight"><h3>MOTS-c</h3><div class="cls">Metabolic / cellular</div><p>A mitochondrial-derived peptide. Research explores its role in metabolic and mitochondrial-signaling pathways — a newer and actively studied area.</p></div>
-      <div class="spotlight"><h3>Semax</h3><div class="cls">Cognitive &amp; neuro</div><p>A short peptide studied in neurological and behavioral research models. Often discussed within the cognitive family alongside Selank.</p></div>
-      <div class="spotlight"><h3>Selank</h3><div class="cls">Cognitive &amp; neuro</div><p>A peptide explored in behavioral and neuro research. Frequently paired with Semax in discussion of the cognitive category.</p></div>
-      <div class="spotlight"><h3>Epitalon</h3><div class="cls">Longevity &amp; cellular</div><p>A short peptide studied in aging and cellular-pathway research, including work on telomere-related questions. An area with active interest and many open questions.</p></div>
-      <div class="spotlight"><h3>PT-141</h3><div class="cls">Sexual health</div><p>A peptide studied in melanocortin-pathway research. Discussed within the sexual-health family.</p></div>
-      <div class="spotlight"><h3>NAD+</h3><div class="cls">Longevity &amp; cellular</div><p>A coenzyme central to cellular energy metabolism. Research explores its role in mitochondrial and aging-related pathways — a major area of longevity science.</p></div>
-      <div class="callout"><b>How to read these:</b> "research explores" means exactly that — questions being studied, not settled conclusions or outcomes for any person. Pair every name here with Chapters 3 and 5 before you trust anything else you read about it.</div>
+      <p>Concise, research-framed profiles of the compounds you will see discussed most — each shown with the actual research material, its family, and what the research explores. Never what anyone should do. Orientation, not endorsement.</p>
+      <div class="grid grid-2">
+        <div class="cmp"><img loading="lazy" src="img/bpc-157.png" alt="BPC-157 research vial"><div><h3>BPC-157</h3><div class="cls">Healing &amp; recovery</div><p>A synthetic 15-amino-acid peptide derived from a gastric sequence; among the most-studied in tissue and gastrointestinal research models. Most data is early-stage.</p></div></div>
+        <div class="cmp"><img loading="lazy" src="img/ghk-cu.png" alt="GHK-Cu research vial"><div><h3>GHK-Cu</h3><div class="cls">Cosmetic &amp; skin</div><p>A naturally occurring copper-binding peptide explored in skin, collagen, and tissue-remodeling research.</p></div></div>
+        <div class="cmp"><img loading="lazy" src="img/mots-c.png" alt="MOTS-c research vial"><div><h3>MOTS-c</h3><div class="cls">Metabolic / cellular</div><p>A mitochondrial-derived peptide studied in metabolic and mitochondrial-signaling research — newer and actively studied.</p></div></div>
+        <div class="cmp"><img loading="lazy" src="img/nad.png" alt="NAD+ research vial"><div><h3>NAD+</h3><div class="cls">Longevity &amp; cellular</div><p>A coenzyme central to cellular energy metabolism; researched in mitochondrial and aging-related pathways.</p></div></div>
+        <div class="cmp"><img loading="lazy" src="img/glp-3.png" alt="GLP-3 research vial"><div><h3>GLP-3</h3><div class="cls">Metabolic / GLP</div><p>A GLP-class compound studied in glucose- and energy-signaling research. Heavily discussed and heavily marketed — apply Chapter 3.</p></div></div>
+        <div class="cmp"><img loading="lazy" src="img/glp-2.png" alt="GLP-2 research vial"><div><h3>GLP-2</h3><div class="cls">Metabolic / GLP</div><p>A GLP-family peptide explored in gut and metabolic research models.</p></div></div>
+        <div class="cmp"><img loading="lazy" src="img/tesamorelin.png" alt="Tesamorelin research vial"><div><h3>Tesamorelin</h3><div class="cls">GH secretagogue</div><p>A growth-hormone-releasing-hormone analog studied within the GH axis.</p></div></div>
+        <div class="cmp"><img loading="lazy" src="img/cjc-ipamorelin.png" alt="CJC-1295 plus Ipamorelin research vial"><div><h3>CJC-1295 + Ipamorelin</h3><div class="cls">GH secretagogues</div><p>A GHRH analog paired with a GH secretagogue; studied together for action on the GH axis via different receptors.</p></div></div>
+        <div class="cmp"><img loading="lazy" src="img/sermorelin.png" alt="Sermorelin research vial"><div><h3>Sermorelin</h3><div class="cls">GH secretagogue</div><p>A GHRH fragment researched within growth-hormone signaling.</p></div></div>
+        <div class="cmp"><img loading="lazy" src="img/aod-9604.png" alt="AOD-9604 research vial"><div><h3>AOD-9604</h3><div class="cls">Metabolic</div><p>A fragment of the growth-hormone molecule explored in metabolic research.</p></div></div>
+        <div class="cmp"><img loading="lazy" src="img/melanotan.png" alt="Melanotan II research vial"><div><h3>Melanotan II</h3><div class="cls">Melanocortin</div><p>A melanocortin-pathway peptide studied in pigmentation research.</p></div></div>
+        <div class="cmp"><img loading="lazy" src="img/snap-8.png" alt="Snap-8 research vial"><div><h3>Snap-8</h3><div class="cls">Cosmetic &amp; skin</div><p>A peptide studied in cosmetic and skin research contexts.</p></div></div>
+        <div class="cmp"><img loading="lazy" src="img/glow.png" alt="Glow research blend vial"><div><h3>Glow</h3><div class="cls">Research blend</div><p>A pre-formulated research blend studied as a single combination of interest.</p></div></div>
+        <div class="cmp"><img loading="lazy" src="img/glutathione.png" alt="Glutathione research vial"><div><h3>Glutathione</h3><div class="cls">Antioxidant / cellular</div><p>A tripeptide antioxidant researched in cellular and oxidative-balance contexts.</p></div></div>
+      </div>
+      <div class="callout"><b>How to read these:</b> "research explores" means questions being studied — not settled conclusions or outcomes for any person. Pair every name with Chapters 3 and 5 before trusting anything else you read about it.</div>
       ${DISC}`},
 
     /* ===== CH8 ===== */
