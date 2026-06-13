@@ -177,9 +177,10 @@
     .section-sm{padding:64px 0}
 
     /* HERO */
-    .hero{position:relative;padding:84px 0 76px;background:
-      radial-gradient(1100px 520px at 50% -8%,rgba(230,201,122,.22),transparent 60%),
-      linear-gradient(180deg,var(--cream),var(--ivory));overflow:hidden}
+    .hero{position:relative;padding:104px 0 92px;background:
+      radial-gradient(1100px 520px at 50% -6%,rgba(230,201,122,.26),transparent 60%),
+      linear-gradient(180deg,rgba(14,14,16,.84) 0%,rgba(14,14,16,.93) 70%,var(--ivory) 100%),
+      url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1700&q=80') center 30%/cover;overflow:hidden}
     .hero .wrap{position:relative;text-align:center;max-width:920px}
     .hero h1{margin:0 0 22px;background:linear-gradient(180deg,#FBEFC6 0%,#E6C97A 52%,#C9A24B 100%);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:6px}
     .hero .sub{font-size:1.18rem;color:var(--charcoal-soft);max-width:680px;margin:0 auto 18px}
@@ -242,9 +243,12 @@
     /* ===== LIBRARY ===== */
     .module{background:var(--surface);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid rgba(201,162,75,.14);transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
     .module:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
-    .module .cover{aspect-ratio:16/9;background:var(--gold-grad);position:relative}
-    .module .cover img{width:100%;height:100%;object-fit:cover}
-    .module .lock{position:absolute;top:12px;right:12px;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;background:rgba(26,26,26,.78);color:#f0e6c8;padding:6px 12px;border-radius:999px}
+    .module .cover{aspect-ratio:16/9;background:#0b0b0d;position:relative;overflow:hidden}
+    .module .cover img{width:100%;height:100%;object-fit:cover;opacity:.9;transition:transform .7s var(--ease)}
+    .module:hover .cover img{transform:scale(1.06)}
+    .module .cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,13,.12) 0%,rgba(11,11,13,.5) 55%,rgba(11,11,13,.86) 100%)}
+    .cover-label{position:absolute;left:16px;bottom:13px;z-index:2;font-family:'Playfair Display';color:#F0DCA0;font-size:.95rem;letter-spacing:.05em;text-shadow:0 2px 10px rgba(0,0,0,.7)}
+    .module .lock{position:absolute;top:12px;right:12px;z-index:3;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;background:rgba(8,8,10,.82);color:#f0e6c8;padding:6px 12px;border-radius:999px;border:1px solid rgba(201,162,75,.3)}
     .module .body{padding:24px}
     .module h3{font-size:1.18rem;margin:0 0 6px}
     .module .bl{color:var(--charcoal-soft);font-size:.9rem;min-height:42px}
@@ -285,7 +289,7 @@
 
     /* ===== LESSON VIEW ===== */
     .lesson{max-width:840px;margin:0 auto}
-    .video{aspect-ratio:16/9;border-radius:var(--radius);background:linear-gradient(135deg,#262320,#3a3528);display:grid;place-items:center;cursor:pointer;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+    .video{aspect-ratio:16/9;border-radius:var(--radius);background:linear-gradient(rgba(10,10,12,.5),rgba(10,10,12,.78)),url('https://loremflickr.com/1200/675/laboratory,science,molecular?lock=33') center/cover,#1a1814;display:grid;place-items:center;cursor:pointer;position:relative;overflow:hidden;box-shadow:var(--shadow)}
     .video .play{width:84px;height:84px;border-radius:50%;background:var(--gold-grad);display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.4)}
     .video .play:after{content:"";border-left:22px solid #241c06;border-top:14px solid transparent;border-bottom:14px solid transparent;margin-left:6px}
     .video .vlabel{position:absolute;bottom:16px;left:18px;color:#e8dcb8;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase}
@@ -478,17 +482,17 @@
         <article class="tcard">
           <div class="stars">★★★★★</div>
           <p>"I'd spent months lost in forums. One afternoon here and the categories finally made sense. I can't believe this is free."</p>
-          <div class="who"><img loading="lazy" src="https://i.pravatar.cc/96?img=12" alt="Portrait of member Daniel R." /><div><b>Daniel R.</b><small>New to research peptides</small></div></div>
+          <div class="who"><img loading="lazy" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Portrait of member Daniel R." /><div><b>Daniel R.</b><small>New to research peptides</small></div></div>
         </article>
         <article class="tcard">
           <div class="stars">★★★★★</div>
           <p>"Finally a place that explains the research without trying to sell me something in the same breath. The myth vs. research lessons are gold."</p>
-          <div class="who"><img loading="lazy" src="https://i.pravatar.cc/96?img=32" alt="Portrait of member Priya S." /><div><b>Priya S.</b><small>Curious beginner</small></div></div>
+          <div class="who"><img loading="lazy" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Portrait of member Priya S." /><div><b>Priya S.</b><small>Curious beginner</small></div></div>
         </article>
         <article class="tcard">
           <div class="stars">★★★★★</div>
           <p>"It feels exclusive in the best way — like being handed the notes the experienced people never share. Premium, calm, trustworthy."</p>
-          <div class="who"><img loading="lazy" src="https://i.pravatar.cc/96?img=51" alt="Portrait of member Marcus T." /><div><b>Marcus T.</b><small>Researching before deciding</small></div></div>
+          <div class="who"><img loading="lazy" src="https://randomuser.me/api/portraits/men/52.jpg" alt="Portrait of member Marcus T." /><div><b>Marcus T.</b><small>Researching before deciding</small></div></div>
         </article>
       </div>
     </section>
@@ -1001,13 +1005,16 @@
       ${DISC}`}
   ];
 
+  // Photo themes per chapter (real lab/science photography stand-ins; swap for brand photography later)
+  const COVER_KW=['molecule,science','laboratory,vials','microscope,research','science,chemistry','laboratory,testtube','pharmacy,medicine','molecular,biology','scientist,laboratory'];
   function renderModules(){
     const g=document.getElementById('moduleGrid');
     g.innerHTML = MODULES.map((m,i)=>`
       <article class="module">
         <div class="cover">
           <img loading="lazy" alt="${m.t} — research peptide education chapter"
-               src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='225'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23E9D49A'/><stop offset='1' stop-color='%23A8801F'/></linearGradient></defs><rect width='400' height='225' fill='url(%23g)'/><text x='200' y='118' font-family='Georgia' font-size='30' fill='%23241c06' text-anchor='middle' opacity='0.55'>Chapter ${i+1}</text></svg>"/>
+               src="https://loremflickr.com/600/360/${COVER_KW[i]||'science,laboratory'}?lock=${i+11}"/>
+          <span class="cover-label">Chapter ${i+1}</span>
           ${m.lock?'<span class="lock">Members Only</span>':''}
         </div>
         <div class="body">
@@ -1045,9 +1052,9 @@
 
   /* ---------- 3. COMMUNITY FEED ---------- */
   const STARTER_POSTS = [
-    {n:'Amara L.', i:'AL', t:'2h ago', x:'Just finished “The Categories, Explained.” The way it groups the families finally made everything click. Anyone else have that lightbulb moment?', l:42, c:11},
-    {n:'Jon M.',   i:'JM', t:'5h ago', x:'Question for the room — what was the single most confusing thing for you when you first started researching peptides? Mine was the vocabulary.', l:28, c:19},
-    {n:'Sara K.',  i:'SK', t:'1d ago', x:'The “Myth vs. Research” lesson should be required reading before anyone goes near a forum. So much noise out there. This place is calm and clear.', l:67, c:23}
+    {n:'Amara L.', i:'AL', av:'https://randomuser.me/api/portraits/women/68.jpg', t:'2h ago', x:'Just finished “The Categories, Explained.” The way it groups the families finally made everything click. Anyone else have that lightbulb moment?', l:42, c:11},
+    {n:'Jon M.',   i:'JM', av:'https://randomuser.me/api/portraits/men/75.jpg', t:'5h ago', x:'Question for the room — what was the single most confusing thing for you when you first started researching peptides? Mine was the vocabulary.', l:28, c:19},
+    {n:'Sara K.',  i:'SK', av:'https://randomuser.me/api/portraits/women/12.jpg', t:'1d ago', x:'The “Myth vs. Research” lesson should be required reading before anyone goes near a forum. So much noise out there. This place is calm and clear.', l:67, c:23}
   ];
   function renderFeed(){
     document.getElementById('feed').innerHTML = STARTER_POSTS.map(p=>postHTML(p)).join('');
@@ -1055,7 +1062,7 @@
   function postHTML(p){
     return `<article class="post">
       <div class="head">
-        <div class="av">${p.i||'You'}</div>
+        <div class="av">${p.av?`<img loading="lazy" src="${p.av}" alt="${p.n}"/>`:(p.i||'You')}</div>
         <div class="meta"><b>${p.n}</b><small>${p.t}</small></div>
       </div>
       <p class="txt">${p.x}</p>
@@ -1196,7 +1203,8 @@
       <p>Understanding that framing is part of being credible in this space — and part of why this entire resource stays conceptual and educational rather than telling anyone what to do.</p>
       <p>More on the research mindset is in <a onclick="showView('library')" style="color:var(--gold-deep);cursor:pointer;border-bottom:1px solid var(--gold)">Chapter 8</a>.</p>`}
   ];
-  function blogCover(i){ return `data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='225'><defs><linearGradient id='b${i}' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%2317171A'/><stop offset='1' stop-color='%232A2113'/></linearGradient></defs><rect width='400' height='225' fill='url(%23b${i})'/><text x='200' y='120' font-family='Georgia' font-size='22' fill='%23E6C97A' text-anchor='middle' opacity='0.85'>Journal</text></svg>`; }
+  const BLOG_KW=['molecule,abstract','laboratory,science','chemistry,documents','research,microscope','pharmacy,vials'];
+  function blogCover(i){ return `https://loremflickr.com/600/360/${BLOG_KW[i]||'science,laboratory'}?lock=${i+41}`; }
   function renderBlog(){
     document.getElementById('blogGrid').innerHTML=BLOG.map((b,i)=>`
       <article class="module" style="cursor:pointer" onclick="openArticle(${i})">
