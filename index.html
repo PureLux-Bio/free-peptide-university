@@ -31,7 +31,7 @@
   <title>Free Peptide University | Peptides Explained For Beginners</title>
   <meta name="description" content="A free, members-only library that turns the confusing world of research peptides into clear, trustworthy knowledge. Peptides explained for beginners." />
   <link rel="canonical" href="https://freepeptideuniversity.com/" />
-  <meta name="theme-color" content="#0E0E10" />
+  <meta name="theme-color" content="#FAF8F3" />
   <meta name="robots" content="noindex, nofollow" /><!-- REVIEW BUILD: noindex while in review. Flip to "index, follow" before public launch. -->
 
   <!-- Open Graph (so shared links look premium — sharing is the growth engine) -->
@@ -97,24 +97,24 @@
   <!-- ===================== [EDIT: THEME] ===================== -->
   <style>
     :root{
-      /* Palette — Onyx & Gold (dark vault) */
-      --ivory:#0E0E10;          /* page background (near-black onyx) */
-      --cream:#141418;          /* alternating section background */
-      --cream-deep:#1C1C22;     /* deeper band / progress track */
-      --surface:#17171A;        /* cards, panels, posts */
-      --surface-2:#202027;      /* inputs, nested surfaces */
-      --border:rgba(201,162,75,.22); /* gold hairline */
-      --charcoal:#EDE7D6;       /* PRIMARY TEXT — warm ivory */
-      --charcoal-soft:#C6BDA9;  /* secondary text */
-      --muted:#8C8676;          /* muted text */
-      /* Metallic gold (lightened for contrast on black) */
-      --gold-light:#E9D9A6;
-      --gold:#D9B45C;
-      --gold-deep:#E6C97A;      /* gold emphasis text/links on dark */
-      --gold-grad:linear-gradient(135deg,#F2DEA2 0%,#D9B45C 45%,#B8902F 100%);
-      --gold-line:linear-gradient(90deg,transparent,#7a5f22 20%,#C9A24B 50%,#7a5f22 80%,transparent);
-      --shadow:0 26px 64px rgba(0,0,0,.6);
-      --shadow-sm:0 12px 32px rgba(0,0,0,.45);
+      /* Palette — Light luxe (warm ivory + metallic gold), photoreal */
+      --ivory:#FAF8F3;          /* page background (warm off-white) */
+      --cream:#F3EEE3;          /* alternating section background */
+      --cream-deep:#E9E1CF;     /* deeper band / progress track */
+      --surface:#FFFFFF;        /* cards, panels, posts */
+      --surface-2:#FAF6EE;      /* inputs, nested surfaces */
+      --border:rgba(184,144,47,.22); /* gold hairline */
+      --charcoal:#1F1B14;       /* PRIMARY TEXT — warm near-black */
+      --charcoal-soft:#4C463B;  /* secondary text */
+      --muted:#857E6F;          /* muted text */
+      /* Metallic gold (darkened where needed for contrast on light) */
+      --gold-light:#E6C97A;
+      --gold:#C9A24B;
+      --gold-deep:#937219;      /* dark gold for text/links on light (passes contrast) */
+      --gold-grad:linear-gradient(135deg,#EBD9A4 0%,#CBA250 45%,#A8801F 100%);
+      --gold-line:linear-gradient(90deg,transparent,#C9A24B 30%,#E6C97A 50%,#C9A24B 70%,transparent);
+      --shadow:0 22px 54px rgba(60,48,18,.12);
+      --shadow-sm:0 10px 28px rgba(60,48,18,.09);
       --radius:16px;
       --maxw:1180px;
       --ease:cubic-bezier(.22,.61,.36,1);
@@ -153,14 +153,14 @@
     .btn-sm{padding:11px 22px;font-size:.85rem}
 
     /* Header / nav */
-    header.site{position:sticky;top:0;z-index:40;background:rgba(12,12,14,.85);backdrop-filter:blur(14px);border-bottom:1px solid rgba(201,162,75,.22)}
+    header.site{position:sticky;top:0;z-index:40;background:rgba(250,248,243,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(184,144,47,.22)}
     .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
     .brand{display:flex;align-items:center;gap:12px;font-family:'Playfair Display';font-weight:700;font-size:1.18rem;letter-spacing:.5px}
     .brand .mark{width:34px;height:34px;border-radius:50%;background:var(--gold-grad);display:grid;place-items:center;color:#241c06;font-weight:700;box-shadow:inset 0 1px 0 rgba(255,255,255,.5)}
     .navlinks{display:flex;gap:6px;align-items:center}
     .navlinks a{padding:9px 16px;border-radius:999px;font-size:.9rem;font-weight:500;color:var(--charcoal-soft);transition:.35s var(--ease);cursor:pointer}
     .navlinks a:hover{color:var(--gold-deep)}
-    .navlinks a.active{color:#F2E2B0;background:rgba(201,162,75,.14)}
+    .navlinks a.active{color:#241c06;background:rgba(201,162,75,.18)}
     .nav-cta{margin-left:8px}
     .burger{display:none;background:none;border:0;font-size:1.5rem;cursor:pointer;color:var(--charcoal)}
 
@@ -177,12 +177,13 @@
     .section-sm{padding:64px 0}
 
     /* HERO */
-    .hero{position:relative;padding:104px 0 92px;background:
-      radial-gradient(1100px 520px at 50% -6%,rgba(230,201,122,.26),transparent 60%),
-      linear-gradient(180deg,rgba(14,14,16,.84) 0%,rgba(14,14,16,.93) 70%,var(--ivory) 100%),
+    .hero{position:relative;padding:100px 0 88px;background:
+      radial-gradient(1100px 520px at 50% -6%,rgba(230,201,122,.34),transparent 62%),
+      linear-gradient(180deg,rgba(250,248,243,.82) 0%,rgba(250,248,243,.9) 66%,var(--ivory) 100%),
       url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1700&q=80') center 30%/cover;overflow:hidden}
     .hero .wrap{position:relative;text-align:center;max-width:920px}
-    .hero h1{margin:0 0 22px;background:linear-gradient(180deg,#FBEFC6 0%,#E6C97A 52%,#C9A24B 100%);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:6px}
+    .hero h1{margin:0 0 22px}
+    .hero h1 .gold{color:var(--gold-deep)}
     .hero .sub{font-size:1.18rem;color:var(--charcoal-soft);max-width:680px;margin:0 auto 18px}
     .hero .freebadge{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-deep);font-weight:600;margin-bottom:26px;padding:8px 18px;border-radius:999px;background:rgba(201,162,75,.1);border:1px solid rgba(201,162,75,.3)}
     .hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:30px}
@@ -322,10 +323,10 @@
     .deflist dd{margin:0;color:var(--charcoal-soft);font-size:.93rem}
     .myth{display:grid;grid-template-columns:1fr 1fr;border-radius:14px;overflow:hidden;border:1px solid rgba(201,162,75,.2);margin:18px 0}
     .myth .m,.myth .r{padding:18px 22px}
-    .myth .m{background:#241719;border-right:1px solid rgba(201,162,75,.2)}
-    .myth .r{background:#13211a}
+    .myth .m{background:#FBF2EF;border-right:1px solid rgba(201,162,75,.2)}
+    .myth .r{background:#F1F6F1}
     .myth .lab{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin-bottom:8px}
-    .myth .m .lab{color:#E08A6E}.myth .r .lab{color:#74C58C}
+    .myth .m .lab{color:#B25B43}.myth .r .lab{color:#3F7A4E}
     .myth p{margin:0;font-size:.92rem;color:var(--charcoal-soft)}
     .spotlight{background:var(--surface);border:1px solid rgba(201,162,75,.2);border-radius:14px;padding:20px 24px;margin:14px 0;box-shadow:var(--shadow-sm)}
     .spotlight h3{margin:0 0 2px;color:var(--charcoal)}
@@ -334,16 +335,16 @@
     /* Compound card with real product vial */
     .cmp{display:flex;gap:16px;align-items:center;background:var(--surface);border:1px solid rgba(201,162,75,.2);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow-sm);transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
     .cmp:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-    .cmp img{width:84px;height:84px;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 8px 18px rgba(0,0,0,.6))}
+    .cmp img{width:84px;height:84px;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 10px 18px rgba(60,48,18,.26))}
     .cmp h3{margin:0 0 2px;font-size:1.12rem}
     .cmp .cls{font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);font-weight:700;margin-bottom:6px}
     .cmp p{margin:0;font-size:.87rem;color:var(--charcoal-soft)}
     /* Product collection band (real PureLux photography) */
-    .collection{background:linear-gradient(180deg,var(--ivory),#0b0b0d)}
+    .collection{background:linear-gradient(180deg,var(--surface),var(--cream))}
     .pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:42px}
     .pcard{background:var(--surface);border:1px solid rgba(201,162,75,.16);border-radius:14px;padding:22px 14px 18px;text-align:center;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
     .pcard:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
-    .pcard img{width:100%;max-width:128px;aspect-ratio:1;object-fit:contain;margin:0 auto 12px;filter:drop-shadow(0 12px 24px rgba(0,0,0,.55))}
+    .pcard img{width:100%;max-width:128px;aspect-ratio:1;object-fit:contain;margin:0 auto 12px;filter:drop-shadow(0 14px 26px rgba(60,48,18,.22))}
     .pcard b{display:block;font-family:'Playfair Display';font-size:1rem;color:var(--charcoal);line-height:1.2}
     .pcard small{color:var(--muted);font-size:.72rem;letter-spacing:.05em}
     @media(max-width:860px){.pgrid{grid-template-columns:repeat(2,1fr)}}
@@ -432,7 +433,7 @@
     <section class="hero">
       <div class="wrap">
         <div class="freebadge">● Members Only · Free, For Now</div>
-        <h1>The Peptide Education Everyone Wishes They Started With</h1>
+        <h1>The <span class="gold">Peptide Education</span> Everyone Wishes They Started With</h1>
         <p class="sub">A free, members only library that turns the confusing world of research peptides into clear, trustworthy knowledge. Built for the curious, before the noise.</p>
         <div class="hero-cta">
           <button class="btn" onclick="openPopup()">Get Free Access</button>
