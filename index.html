@@ -30,24 +30,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Free Peptide University | Peptides Explained For Beginners</title>
   <meta name="description" content="A free, members-only library that turns the confusing world of research peptides into clear, trustworthy knowledge. Peptides explained for beginners." />
-  <link rel="canonical" href="https://freepeptideuniversity.com/" />
+  <link rel="canonical" href="https://purelux-bio.github.io/free-peptide-university/" /><!-- SWAP to https://freepeptideuniversity.com/ once the domain is registered + pointed -->
   <meta name="theme-color" content="#060912" />
-  <meta name="robots" content="noindex, nofollow" /><!-- REVIEW BUILD: noindex while in review. Flip to "index, follow" before public launch. -->
+  <meta name="robots" content="index, follow" />
 
   <!-- Open Graph (so shared links look premium — sharing is the growth engine) -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Free Peptide University" />
   <meta property="og:title" content="Free Peptide University | Peptides Explained For Beginners" />
   <meta property="og:description" content="The peptide education everyone wishes they started with. A free, members-only library and community. By invitation, for now." />
-  <meta property="og:url" content="https://freepeptideuniversity.com/" />
-  <meta property="og:image" content="https://freepeptideuniversity.com/og-image.jpg" />
+  <meta property="og:url" content="https://purelux-bio.github.io/free-peptide-university/" />
+  <meta property="og:image" content="https://purelux-bio.github.io/free-peptide-university/og-image.jpg" />
   <meta property="og:image:alt" content="Free Peptide University — premium peptide education" />
 
   <!-- Twitter card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Free Peptide University | Peptides Explained For Beginners" />
   <meta name="twitter:description" content="The peptide education everyone wishes they started with. Free, members-only, by invitation." />
-  <meta name="twitter:image" content="https://freepeptideuniversity.com/og-image.jpg" />
+  <meta name="twitter:image" content="https://purelux-bio.github.io/free-peptide-university/og-image.jpg" />
 
   <!-- Google Fonts: high-contrast serif headings + refined sans body -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -60,9 +60,9 @@
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
     "name": "Free Peptide University",
-    "url": "https://freepeptideuniversity.com/",
+    "url": "https://purelux-bio.github.io/free-peptide-university/",
     "description": "A free, members-only educational library and community explaining research peptides for beginners.",
-    "sameAs": []
+    "sameAs": ["https://www.skool.com/purelux-peptide-university-1356"]
   }
   </script>
   <!-- JSON-LD: Course list for the library modules -->
@@ -89,7 +89,7 @@
       {"@type":"Question","name":"Is this really free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Full access to the education library and community costs nothing right now. We may introduce paid tiers later; early members keep access."}},
       {"@type":"Question","name":"Is this medical advice?","acceptedAnswer":{"@type":"Answer","text":"No. Everything here is educational and research framed only. It is not medical advice and does not replace a licensed professional."}},
       {"@type":"Question","name":"Who is this for?","acceptedAnswer":{"@type":"Answer","text":"Anyone curious about research peptides who wants real understanding before they make any decisions."}},
-      {"@type":"Question","name":"How do I get in?","acceptedAnswer":{"@type":"Answer","text":"Enter your email, confirm, and you are instantly inside the library and community."}}
+      {"@type":"Question","name":"How do I get in?","acceptedAnswer":{"@type":"Answer","text":"Enter your email for instant access to the full library and reference on this device, and request to join the private community for discussion."}}
     ]
   }
   </script>
@@ -170,7 +170,8 @@
     .navlinks{display:flex;gap:6px;align-items:center}
     .navlinks a{padding:9px 16px;border-radius:999px;font-size:.9rem;font-weight:500;color:var(--charcoal-soft);transition:.35s var(--ease);cursor:pointer}
     .navlinks a:hover{color:var(--gold-deep)}
-    .navlinks a.active{color:#04140F;background:rgba(94,230,208,.18)}
+    .navlinks a.active{color:var(--gold-deep);background:rgba(94,230,208,.12)}
+    .navlinks a.btn,.navlinks a.btn:hover{color:#04140F}
     .nav-cta{margin-left:8px}
     .burger{display:none;background:none;border:0;font-size:1.5rem;cursor:pointer;color:var(--charcoal)}
 
@@ -260,10 +261,10 @@
     /* ===== LIBRARY ===== */
     .module{background:var(--surface);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid rgba(94,230,208,.14);transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
     .module:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
-    .module .cover{aspect-ratio:16/9;background:#0b0b0d;position:relative;overflow:hidden}
-    .module .cover img{width:100%;height:100%;object-fit:cover;opacity:.9;transition:transform .7s var(--ease)}
+    .module .cover{aspect-ratio:16/9;background:#F2F0EA;position:relative;overflow:hidden}
+    .module .cover img{width:100%;height:100%;object-fit:contain;padding:10px 0;box-sizing:border-box;transition:transform .7s var(--ease)}
     .module:hover .cover img{transform:scale(1.06)}
-    .module .cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,13,.12) 0%,rgba(11,11,13,.5) 55%,rgba(11,11,13,.86) 100%)}
+    .module .cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,13,0) 58%,rgba(6,9,18,.82) 100%)}
     .cover-label{position:absolute;left:16px;bottom:13px;z-index:2;font-family:'Sora';color:#BFEFE6;font-size:.95rem;letter-spacing:.05em;text-shadow:0 2px 10px rgba(0,0,0,.7)}
     .module .lock{position:absolute;top:12px;right:12px;z-index:3;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;background:rgba(8,8,10,.82);color:#CDEDE5;padding:6px 12px;border-radius:999px;border:1px solid rgba(94,230,208,.3)}
     .module .body{padding:24px}
@@ -306,10 +307,6 @@
 
     /* ===== LESSON VIEW ===== */
     .lesson{max-width:840px;margin:0 auto}
-    .video{aspect-ratio:16/9;border-radius:var(--radius);background:linear-gradient(rgba(10,10,12,.5),rgba(10,10,12,.78)),url('https://loremflickr.com/1200/675/laboratory,science,molecular?lock=33') center/cover,#1a1814;display:grid;place-items:center;cursor:pointer;position:relative;overflow:hidden;box-shadow:var(--shadow)}
-    .video .play{width:84px;height:84px;border-radius:50%;background:var(--gold-grad);display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.4)}
-    .video .play:after{content:"";border-left:22px solid #04140F;border-top:14px solid transparent;border-bottom:14px solid transparent;margin-left:6px}
-    .video .vlabel{position:absolute;bottom:16px;left:18px;color:#e8dcb8;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase}
     .lesson-body{margin-top:34px;font-size:1.06rem;color:var(--charcoal-soft)}
     .lesson-body h2{margin-top:34px}
     .compound-disc{background:var(--cream);border-left:3px solid var(--gold);padding:16px 20px;border-radius:8px;font-size:.85rem;color:var(--muted);margin:24px 0}
@@ -456,9 +453,9 @@
           <button class="btn btn-ghost" onclick="showView('library')">Explore The Library</button>
         </div>
         <p class="whyfree">We believe an informed community is a stronger community. The education stays free because trust comes first — access may close as we grow.</p>
-        <div class="livebar"><span class="dot"></span> <span><b id="memberCount">2,418</b> curious members inside · spots fill fast</span></div>
+        <div class="livebar"><span class="dot"></span> <span><b>Founding member window is open</b> · free while it lasts</span></div>
         <div class="trustrow">
-          <span>Trusted by curious researchers worldwide</span>
+          <span>Made free to the world by our sponsors — Adonis TRT &amp; PureLux Bio</span>
         </div>
       </div>
     </section>
@@ -500,32 +497,29 @@
       </div>
     </section>
 
-    <!-- ---------- SOCIAL PROOF [EDIT: COPY-PROOF] ---------- -->
+    <!-- ---------- WHAT YOU GET [EDIT: COPY-PROOF] ---------- -->
     <section class="proof">
       <div class="wrap center reveal">
-        <div class="eyebrow">Trusted By The Curious</div>
-        <h2>The resource people wish they'd found sooner</h2>
+        <div class="eyebrow">What's Actually Inside</div>
+        <h2>The resource we wish existed when we started</h2>
         <div class="stat-line" style="margin-top:44px">
-          <div class="stat"><div class="n" id="memberCount2">2,418</div><div class="l">Members Inside</div></div>
+          <div class="stat"><div class="n">8</div><div class="l">Textbook Chapters</div></div>
+          <div class="stat"><div class="n">75</div><div class="l">Compound Reference</div></div>
           <div class="stat"><div class="n">100%</div><div class="l">Free Access</div></div>
-          <div class="stat"><div class="n">24</div><div class="l">Research Lessons</div></div>
         </div>
       </div>
       <div class="wrap grid grid-3 reveal">
         <article class="tcard">
-          <div class="stars">★★★★★</div>
-          <p>"I'd spent months lost in forums. One afternoon here and the categories finally made sense. I can't believe this is free."</p>
-          <div class="who"><img loading="lazy" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Portrait of member Daniel R." /><div><b>Daniel R.</b><small>New to research peptides</small></div></div>
+          <h3 style="font-size:1.1rem;margin:0 0 10px;color:var(--gold-deep)">Founding member standing</h3>
+          <p>We just opened the doors. Join now and you're a founding member — whatever this grows into, early members keep full access, free, permanently.</p>
         </article>
         <article class="tcard">
-          <div class="stars">★★★★★</div>
-          <p>"Finally a place that explains the research without trying to sell me something in the same breath. The myth vs. research lessons are gold."</p>
-          <div class="who"><img loading="lazy" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Portrait of member Priya S." /><div><b>Priya S.</b><small>Curious beginner</small></div></div>
+          <h3 style="font-size:1.1rem;margin:0 0 10px;color:var(--gold-deep)">Nothing for sale here</h3>
+          <p>No store, no checkout, no affiliate links in the lessons. The education is sponsored so it can stay free — and the sponsorship is disclosed right in the footer.</p>
         </article>
         <article class="tcard">
-          <div class="stars">★★★★★</div>
-          <p>"It feels exclusive in the best way — like being handed the notes the experienced people never share. Premium, calm, trustworthy."</p>
-          <div class="who"><img loading="lazy" src="https://randomuser.me/api/portraits/men/52.jpg" alt="Portrait of member Marcus T." /><div><b>Marcus T.</b><small>Researching before deciding</small></div></div>
+          <h3 style="font-size:1.1rem;margin:0 0 10px;color:var(--gold-deep)">A real, private community</h3>
+          <p>Questions get answered in our private community group — a calm room instead of a loud forum. Membership requests are reviewed personally.</p>
         </article>
       </div>
     </section>
@@ -575,7 +569,7 @@
           </div>
           <div class="faq-item">
             <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">How do I get in? <span class="pm">+</span></button>
-            <div class="faq-a"><p>Enter your email, confirm, and you are instantly inside the library and community.</p></div>
+            <div class="faq-a"><p>Enter your email and the full library and members Reference unlock instantly on this device. For the private community, request to join our group — every request is reviewed personally.</p></div>
           </div>
         </div>
       </div>
@@ -636,36 +630,31 @@
           <h2>Ask better questions</h2>
         </div>
         <div class="feedwrap">
-          <!-- Feed column -->
+          <!-- Community pitch column -->
           <div>
-            <div class="composer">
-              <textarea id="postInput" placeholder="Share a question or an insight with the circle…"></textarea>
-              <div class="row"><button class="btn btn-sm" onclick="addPost()">Post</button></div>
+            <div class="post">
+              <h3 style="margin:0 0 10px">The discussion lives in our private group</h3>
+              <p class="txt" style="margin-top:0">The community runs on Skool — a private, members-only group where questions get real answers and every discussion is organized by chapter. It's free, and every membership request is reviewed personally. That's what keeps the room calm and the quality high.</p>
+              <a class="btn" href="https://www.skool.com/purelux-peptide-university-1356/about" target="_blank" rel="noopener">Request To Join The Community</a>
             </div>
-            <div id="feed"><!-- posts injected by JS [EDIT: COPY-FEED] --></div>
+            <div class="post">
+              <h3 style="margin:0 0 10px">What happens inside</h3>
+              <p class="txt" style="margin-top:0">Ask the questions you can't ask in public forums. Work through the classroom courses. Compare notes with people reading the same research — without hype, spam, or anyone selling to you.</p>
+            </div>
           </div>
           <!-- Sidebar -->
           <aside class="side">
             <div class="panel">
-              <h4>Categories</h4>
-              <div class="cat">Peptides 101 <span>312</span></div>
-              <div class="cat">The Categories <span>208</span></div>
-              <div class="cat">Myth vs. Research <span>164</span></div>
-              <div class="cat">The Glossary <span>97</span></div>
-              <div class="cat">Wins & Questions <span>440</span></div>
-            </div>
-            <div class="panel">
-              <h4>Leaderboard</h4>
-              <div class="lead"><span class="rank">1</span><span class="av">AL</span><b>Amara L.</b><small>1,204</small></div>
-              <div class="lead"><span class="rank">2</span><span class="av">JM</span><b>Jon M.</b><small>982</small></div>
-              <div class="lead"><span class="rank">3</span><span class="av">SK</span><b>Sara K.</b><small>871</small></div>
-              <div class="lead"><span class="rank">4</span><span class="av">DR</span><b>Daniel R.</b><small>755</small></div>
-              <div class="lead"><span class="rank">5</span><span class="av">PT</span><b>Priya S.</b><small>690</small></div>
+              <h4>Discussion Rooms</h4>
+              <div class="cat">General discussion</div>
+              <div class="cat">Peptides 101</div>
+              <div class="cat">The Categories</div>
+              <div class="cat">Myth vs. Research</div>
             </div>
             <div class="panel" style="text-align:center">
-              <div class="eyebrow" style="margin-bottom:10px">Not Inside Yet?</div>
-              <p class="muted" style="font-size:.85rem;margin:0 0 14px">Posting is for members. It's free.</p>
-              <button class="btn btn-sm" onclick="openPopup()">Get Free Access</button>
+              <div class="eyebrow" style="margin-bottom:10px">Free To Join</div>
+              <p class="muted" style="font-size:.85rem;margin:0 0 14px">Requests are reviewed personally — founding member spots are open now.</p>
+              <a class="btn btn-sm" href="https://www.skool.com/purelux-peptide-university-1356/about" target="_blank" rel="noopener">Join On Skool</a>
             </div>
           </aside>
         </div>
@@ -771,10 +760,6 @@
         <div class="eyebrow" id="lessonEyebrow">Chapter 1 · Peptides 101</div>
         <h1 id="lessonTitle" style="font-size:clamp(2rem,4vw,3rem);margin:6px 0 14px">What Research Peptides Actually Are</h1>
         <div class="lesson-meta" id="lessonMeta"></div>
-        <div class="video" onclick="this.querySelector('.vlabel').textContent='Video coming soon — replace with your embed'">
-          <div class="play"></div>
-          <span class="vlabel">Chapter Video · Placeholder</span>
-        </div>
         <div class="toc" id="lessonToc"></div>
         <div class="lesson-body" id="lessonBody"><!-- injected by openLesson() --></div>
         <div class="compound-disc">For educational and research purposes only. This content is not medical advice. Compounds referenced are research use only and not intended to diagnose, treat, cure, or prevent any disease.</div>
@@ -790,7 +775,7 @@
   <!-- ===================== STICKY CTA ===================== -->
   <div class="sticky" id="sticky">
     <div class="in">
-      <p><b>Free access is open</b> — join 2,400+ curious members before the door closes.</p>
+      <p><b>Free access is open</b> — become a founding member while the door is open.</p>
       <button class="btn btn-sm" onclick="openPopup()">Get Free Access</button>
     </div>
   </div>
@@ -807,13 +792,14 @@
           <input type="email" placeholder="Enter your email" required aria-label="Email address" style="min-width:100%" />
           <button class="btn" type="submit" style="width:100%;justify-content:center">Unlock Free Access</button>
         </form>
-        <p class="capnote">No spam. Leave anytime. Spots fill fast.</p>
+        <p class="capnote">No spam, ever. Leave anytime.</p>
       </div>
       <div id="popupSuccess" style="display:none">
         <div class="eyebrow">Welcome In</div>
         <h2>You're in. ✦</h2>
-        <p>Check your inbox to confirm — your library and community access is ready. Welcome to the inner circle.</p>
+        <p>The full library and the members Reference are now unlocked on this device. For discussions, request a spot in the private community.</p>
         <button class="btn" onclick="closePopup();showView('library')" style="margin-top:18px">Enter The Library</button>
+        <a class="btn btn-ghost" href="https://www.skool.com/purelux-peptide-university-1356/about" target="_blank" rel="noopener" style="margin-top:12px">Join The Community</a>
       </div>
     </div>
   </div>
@@ -836,9 +822,9 @@
         <div>
           <h5>Trust</h5>
           <a onclick="openPopup()">Join Free</a>
-          <a href="#">Privacy</a>
-          <a href="#">Terms</a>
-          <a href="#">Contact</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="https://www.skool.com/purelux-peptide-university-1356/about" target="_blank" rel="noopener">Contact — via the community</a>
         </div>
       </div>
       <div style="border-top:1px solid rgba(94,230,208,.16);margin-top:8px;padding-top:26px;text-align:center">
@@ -850,7 +836,7 @@
         </div>
         <p style="color:#b6afa1;font-size:.8rem;margin-top:12px;max-width:580px;margin-left:auto;margin-right:auto">Free Peptide University is an independent educational resource, made free to the public through the sponsorship of Adonis TRT and PureLux Bio.</p>
       </div>
-      <p class="disclaimer">For educational and research purposes only. This content is not medical advice. Compounds referenced are research use only and not intended to diagnose, treat, cure, or prevent any disease. Free Peptide University does not sell compounds and does not provide dosing, protocols, or instructions for use.</p>
+      <p class="disclaimer">For educational and research purposes only. This content is not medical advice. Compounds referenced are research use only and not intended to diagnose, treat, cure, or prevent any disease. Free Peptide University does not sell compounds and does not provide medical advice or instructions for use; any figures presented are reference summaries of research literature only.</p>
       <p class="legal">© <span id="yr"></span> Free Peptide University · freepeptideuniversity.com · All rights reserved.</p>
     </div>
   </footer>
@@ -1073,15 +1059,15 @@
       ${DISC}`}
   ];
 
-  // Photo themes per chapter (real lab/science photography stand-ins; swap for brand photography later)
-  const COVER_KW=['molecule,science','laboratory,vials','microscope,research','science,chemistry','laboratory,testtube','pharmacy,medicine','molecular,biology','scientist,laboratory'];
+  // Chapter covers — real PureLux vial photography (local, deterministic, on-brand)
+  const COVER_IMG=['img/bpc-157.png','img/cjc-ipamorelin.png','img/melanotan.png','img/sermorelin.png','img/glutathione.png','img/nad.png','img/glow.png','img/mots-c.png'];
   function renderModules(){
     const g=document.getElementById('moduleGrid');
     g.innerHTML = MODULES.map((m,i)=>`
       <article class="module">
         <div class="cover">
           <img loading="lazy" alt="${m.t} — research peptide education chapter"
-               src="https://loremflickr.com/600/360/${COVER_KW[i]||'science,laboratory'}?lock=${i+11}"/>
+               src="${COVER_IMG[i]||'img/bpc-157.png'}"/>
           <span class="cover-label">Chapter ${i+1}</span>
           ${m.lock?'<span class="lock">Members Only</span>':''}
         </div>
@@ -1118,42 +1104,6 @@
     toc.innerHTML=html+'</ol>';
   }
 
-  /* ---------- 3. COMMUNITY FEED ---------- */
-  const STARTER_POSTS = [
-    {n:'Amara L.', i:'AL', av:'https://randomuser.me/api/portraits/women/68.jpg', t:'2h ago', x:'Just finished “The Categories, Explained.” The way it groups the families finally made everything click. Anyone else have that lightbulb moment?', l:42, c:11},
-    {n:'Jon M.',   i:'JM', av:'https://randomuser.me/api/portraits/men/75.jpg', t:'5h ago', x:'Question for the room — what was the single most confusing thing for you when you first started researching peptides? Mine was the vocabulary.', l:28, c:19},
-    {n:'Sara K.',  i:'SK', av:'https://randomuser.me/api/portraits/women/12.jpg', t:'1d ago', x:'The “Myth vs. Research” lesson should be required reading before anyone goes near a forum. So much noise out there. This place is calm and clear.', l:67, c:23}
-  ];
-  function renderFeed(){
-    document.getElementById('feed').innerHTML = STARTER_POSTS.map(p=>postHTML(p)).join('');
-  }
-  function postHTML(p){
-    return `<article class="post">
-      <div class="head">
-        <div class="av">${p.av?`<img loading="lazy" src="${p.av}" alt="${p.n}"/>`:(p.i||'You')}</div>
-        <div class="meta"><b>${p.n}</b><small>${p.t}</small></div>
-      </div>
-      <p class="txt">${p.x}</p>
-      <div class="acts">
-        <button onclick="like(this)">♡ <span>${p.l}</span></button>
-        <button>💬 <span>${p.c}</span> comments</button>
-        <button onclick="copyShare()">↗ Share</button>
-      </div>
-    </article>`;
-  }
-  function like(btn){
-    const s=btn.querySelector('span');
-    if(btn.classList.toggle('liked')){ s.textContent=(+s.textContent)+1; btn.firstChild.textContent='♥ '; }
-    else { s.textContent=(+s.textContent)-1; btn.firstChild.textContent='♡ '; }
-  }
-  function addPost(){
-    const ta=document.getElementById('postInput'); const v=ta.value.trim();
-    if(!v) return;
-    const p={n:'You', i:'You', t:'just now', x:v, l:0, c:0};
-    document.getElementById('feed').insertAdjacentHTML('afterbegin', postHTML(p));
-    ta.value='';
-  }
-
   /* ---------- 4. FAQ accordions ---------- */
   function toggleFaq(btn){
     const open = btn.getAttribute('aria-expanded')==='true';
@@ -1187,22 +1137,22 @@
       document.getElementById('popupSuccess').style.display='block';
     } else {
       const form=e.target;
-      form.innerHTML='<p style="margin:0;color:var(--gold-deep);font-weight:600;font-family:Sora;font-size:1.2rem">✦ You\'re in — check your inbox to confirm.</p>';
+      form.innerHTML='<p style="margin:0;color:var(--gold-deep);font-weight:600;font-family:Sora;font-size:1.2rem">✦ You\'re in — the library and Reference are unlocked.</p>';
     }
-    bumpMember();
+    try{ localStorage.setItem('fpu_email', e.target.querySelector('input[type=email]')?.value || ''); }catch(_){}
     setMember(); // unlock members-only Reference
     return false;
   }
 
   /* ---------- 7. SHARE (copy link + social) ---------- */
   function copyShare(){
-    const url='https://freepeptideuniversity.com/?invite=1';
+    const url='https://purelux-bio.github.io/free-peptide-university/?invite=1';
     navigator.clipboard?.writeText(url).then(()=>{
       const l=document.getElementById('copyLabel'); if(l){ l.textContent='Link Copied ✓'; setTimeout(()=>l.textContent='Copy Invite Link',2200);}
     }).catch(()=>{ prompt('Copy this invite link:', url); });
   }
   function shareTo(net){
-    const url=encodeURIComponent('https://freepeptideuniversity.com/');
+    const url=encodeURIComponent('https://purelux-bio.github.io/free-peptide-university/');
     const text=encodeURIComponent('The peptide education everyone wishes they started with — free, by invitation:');
     const map={
       x:`https://twitter.com/intent/tweet?text=${text}&url=${url}`,
@@ -1214,12 +1164,6 @@
 
   /* ---------- 8. MARK COMPLETE ---------- */
   function markComplete(btn){ btn.textContent='✓ Completed'; btn.style.filter='grayscale(.3)'; btn.disabled=true; }
-
-  /* ---------- 9. LIVE MEMBER COUNTER (tasteful scarcity) ---------- */
-  let members=2418;
-  function paintMembers(){ ['memberCount','memberCount2'].forEach(id=>{const el=document.getElementById(id); if(el) el.textContent=members.toLocaleString();}); }
-  function bumpMember(){ members++; paintMembers(); }
-  setInterval(()=>{ if(Math.random()<0.6){ members++; paintMembers(); } }, 9000); // a member joins every ~15s on average
 
   /* ---------- 10. STICKY CTA on scroll ---------- */
   window.addEventListener('scroll',()=>{
@@ -1271,8 +1215,8 @@
       <p>Understanding that framing is part of being credible in this space — and part of why this entire resource stays conceptual and educational rather than telling anyone what to do.</p>
       <p>More on the research mindset is in <a onclick="showView('library')" style="color:var(--gold-deep);cursor:pointer;border-bottom:1px solid var(--gold)">Chapter 8</a>.</p>`}
   ];
-  const BLOG_KW=['molecule,abstract','laboratory,science','chemistry,documents','research,microscope','pharmacy,vials'];
-  function blogCover(i){ return `https://loremflickr.com/600/360/${BLOG_KW[i]||'science,laboratory'}?lock=${i+41}`; }
+  const BLOG_IMG=['img/ghk-cu.png','img/tesamorelin.png','img/glp-3.png','img/snap-8.png','img/aod-9604.png'];
+  function blogCover(i){ return BLOG_IMG[i]||'img/ghk-cu.png'; }
   function renderBlog(){
     document.getElementById('blogGrid').innerHTML=BLOG.map((b,i)=>`
       <article class="module" style="cursor:pointer" onclick="openArticle(${i})">
@@ -1430,7 +1374,7 @@
 
   /* ---------- INIT ---------- */
   document.getElementById('yr').textContent = new Date().getFullYear();
-  renderModules(); renderFeed(); paintMembers(); runReveal(); calcRecon(); calcDraw();
+  renderModules(); runReveal(); calcRecon(); calcDraw();
   renderStacks(); renderBlog(); renderReference();
   </script>
 </body>
