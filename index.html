@@ -225,6 +225,8 @@
     .newsbar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:22px 0 10px}
     .ruo-chip{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#E7C56B;background:rgba(231,197,107,.08);border:1px solid rgba(231,197,107,.34);padding:6px 14px;border-radius:999px}
     .news-updated{font-size:.8rem}
+    .sponsor-line{font-size:.82rem;color:var(--charcoal-soft);margin:0 0 4px;padding:10px 16px;background:linear-gradient(135deg,rgba(143,247,232,.06),rgba(94,230,208,.03));border:1px solid rgba(94,230,208,.14);border-radius:10px}
+    .sponsor-line a{color:var(--gold-deep);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(94,230,208,.4)}
     .news-filters{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 22px}
     .news-filters button{font-family:'Inter';font-size:.78rem;font-weight:500;color:var(--charcoal-soft);background:var(--surface-2);border:1px solid rgba(94,230,208,.18);padding:7px 15px;border-radius:999px;cursor:pointer;transition:.3s var(--ease)}
     .news-filters button:hover{color:var(--gold-deep);border-color:var(--gold)}
@@ -747,6 +749,7 @@
           <span class="ruo-chip">Research Use Only · educational · not medical advice</span>
           <span class="news-updated muted" id="newsUpdated"></span>
         </div>
+        <p class="sponsor-line reveal">This free research digest is made possible by our sponsor, <a href="https://pureluxbio.com/?utm_source=freepeptideuniversity&utm_medium=sponsor&utm_campaign=news" target="_blank" rel="noopener sponsored">PureLux Bio</a> — U.S.-made research-grade peptides. <span class="muted">Explore the sponsor →</span></p>
         <div class="news-filters reveal" id="newsFilters"></div>
         <div class="news-list reveal" id="newsList"></div>
       </div>
@@ -889,9 +892,9 @@
         <div style="display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap">
           <span style="font-family:'Sora';font-weight:700;font-size:1.08rem;color:var(--gold-deep);letter-spacing:.04em">Adonis&nbsp;TRT</span>
           <span style="color:var(--muted)">·</span>
-          <span style="font-family:'Sora';font-weight:700;font-size:1.08rem;color:var(--gold-deep);letter-spacing:.04em">PureLux&nbsp;Bio</span>
+          <a href="https://pureluxbio.com/?utm_source=freepeptideuniversity&utm_medium=sponsor&utm_campaign=fpu-footer" target="_blank" rel="noopener sponsored" style="font-family:'Sora';font-weight:700;font-size:1.08rem;color:var(--gold-deep);letter-spacing:.04em;text-decoration:none;border-bottom:1px solid rgba(94,230,208,.4)">PureLux&nbsp;Bio&nbsp;→</a>
         </div>
-        <p style="color:#b6afa1;font-size:.8rem;margin-top:12px;max-width:580px;margin-left:auto;margin-right:auto">Free Peptide University is an independent educational resource, made free to the public through the sponsorship of Adonis TRT and PureLux Bio.</p>
+        <p style="color:#b6afa1;font-size:.8rem;margin-top:12px;max-width:580px;margin-left:auto;margin-right:auto">Free Peptide University is an independent educational resource, made free to the public through the sponsorship of Adonis TRT and <a href="https://pureluxbio.com/?utm_source=freepeptideuniversity&utm_medium=sponsor&utm_campaign=fpu-disclosure" target="_blank" rel="noopener sponsored" style="color:var(--gold-light)">PureLux Bio</a> — a U.S. supplier of research-grade peptides.</p>
       </div>
       <p class="disclaimer">For educational and research purposes only. This content is not medical advice. Compounds referenced are research use only and not intended to diagnose, treat, cure, or prevent any disease. Free Peptide University does not sell compounds and does not provide medical advice or instructions for use; any figures presented are reference summaries of research literature only.</p>
       <p class="legal">© <span id="yr"></span> Free Peptide University · freepeptideuniversity.com · All rights reserved.</p>
@@ -1081,7 +1084,7 @@
     {title:'Compound Spotlights', body:`
       <p>Concise, research-framed profiles of the compounds you will see discussed most — each shown with the actual research material, its family, and what the research explores. Never what anyone should do. Orientation, not endorsement.</p>
       <div class="grid grid-2">
-        <div class="cmp"><img loading="lazy" src="img/bpc-157.png" alt="BPC-157 research vial"><div><h3>BPC-157</h3><div class="cls">Healing &amp; recovery</div><p>A synthetic 15-amino-acid peptide derived from a gastric sequence; among the most-studied in tissue and gastrointestinal research models. Most data is early-stage.</p></div></div>
+        <div class="cmp"><img loading="lazy" src="img/bpc-157.png" alt="BPC-157 research vial"><div><h3><a href="compounds/bpc-157.html" style="color:var(--gold-deep);border-bottom:1px solid var(--gold)">BPC-157</a></h3><div class="cls">Healing &amp; recovery · in-depth profile →</div><p>A synthetic 15-amino-acid peptide derived from a gastric sequence; among the most-studied in tissue and gastrointestinal research models. Most data is early-stage. <a href="compounds/bpc-157.html" style="color:var(--gold-deep)">Read the cited profile →</a></p></div></div>
         <div class="cmp"><img loading="lazy" src="img/ghk-cu.png" alt="GHK-Cu research vial"><div><h3>GHK-Cu</h3><div class="cls">Cosmetic &amp; skin</div><p>A naturally occurring copper-binding peptide explored in skin, collagen, and tissue-remodeling research.</p></div></div>
         <div class="cmp"><img loading="lazy" src="img/mots-c.png" alt="MOTS-c research vial"><div><h3>MOTS-c</h3><div class="cls">Metabolic / cellular</div><p>A mitochondrial-derived peptide studied in metabolic and mitochondrial-signaling research — newer and actively studied.</p></div></div>
         <div class="cmp"><img loading="lazy" src="img/nad.png" alt="NAD+ research vial"><div><h3>NAD+</h3><div class="cls">Longevity &amp; cellular</div><p>A coenzyme central to cellular energy metabolism; researched in mitochondrial and aging-related pathways.</p></div></div>
