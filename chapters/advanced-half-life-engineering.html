@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Half-Life Engineering: Why 2 Minutes Becomes a Week | Free Peptide University</title>
+  <meta name="description" content="How chemists extend a peptide's half-life: fatty-acid acylation, albumin binding, PEGylation and DAC linkers — the reason native GLP-1 lasts 2 minutes but semaglutide lasts a week." />
+  <link rel="canonical" href="https://freepeptideuniversity.com/chapters/advanced-half-life-engineering.html" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#060912" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Free Peptide University" />
+  <meta property="og:title" content="Half-Life Engineering: Why 2 Minutes Becomes a Week" />
+  <meta property="og:description" content="How chemists extend a peptide's half-life: fatty-acid acylation, albumin binding, PEGylation and DAC linkers — the reason native GLP-1 lasts 2 minutes but semaglutide lasts a week." />
+  <meta property="og:url" content="https://freepeptideuniversity.com/chapters/advanced-half-life-engineering.html" />
+  <meta property="og:image" content="https://freepeptideuniversity.com/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Half-Life Engineering: Why 2 Minutes Becomes a Week", "description": "How chemists extend a peptide's half-life: fatty-acid acylation, albumin binding, PEGylation and DAC linkers \u2014 the reason native GLP-1 lasts 2 minutes but semaglutide lasts a week.", "author": {"@type": "Organization", "name": "Free Peptide University"}, "publisher": {"@type": "Organization", "name": "Free Peptide University"}, "mainEntityOfPage": "https://freepeptideuniversity.com/chapters/advanced-half-life-engineering.html", "image": "https://freepeptideuniversity.com/og-image.jpg", "datePublished": "2026-08-17", "dateModified": "2026-08-17"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Free Peptide University", "item": "https://freepeptideuniversity.com/"}, {"@type": "ListItem", "position": 2, "name": "Advanced Track"}, {"@type": "ListItem", "position": 3, "name": "Half-Life Engineering", "item": "https://freepeptideuniversity.com/chapters/advanced-half-life-engineering.html"}]}</script>
+  <style>:root{--bg:#060912;--surface:#101829;--cream:#0A0F1C;--text:#EAF2FF;--soft:#AEBCD8;--muted:#6E7C99;--aqua:#7DEBDC;--aqua2:#34D6C2;--border:rgba(94,230,208,.20)}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.75;letter-spacing:.2px;-webkit-font-smoothing:antialiased;background-image:linear-gradient(rgba(94,230,208,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(94,230,208,.03) 1px,transparent 1px);background-size:46px 46px}
+    .wrap{max-width:840px;margin:0 auto;padding:56px 28px 90px}
+    h1,h2,h3{font-family:'Sora',sans-serif;line-height:1.2;color:var(--text)}
+    h1{font-size:clamp(2rem,5vw,3rem);margin:8px 0 6px}
+    h2{font-size:1.5rem;margin:44px 0 12px}
+    h3{font-size:1.12rem;margin:24px 0 6px}
+    p,li{color:var(--soft);font-size:1.03rem}
+    a{color:var(--aqua)}
+    strong{color:var(--text)}
+    sup a{font-size:.7em;text-decoration:none;padding:0 1px}
+    .eyebrow{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--aqua);font-weight:600}
+    .sub{color:var(--muted);font-size:1.05rem;margin:0 0 8px}
+    .meta{color:var(--muted);font-size:.85rem;margin:0 0 22px}
+    .topnav{display:flex;justify-content:space-between;align-items:center;margin-bottom:40px;font-size:.92rem}
+    .topnav .brand{font-family:'Sora';font-weight:700;color:var(--text);text-decoration:none}
+    .topnav .brand span{color:var(--aqua)}
+    .callout{background:linear-gradient(135deg,rgba(143,247,232,.14),rgba(94,230,208,.06));border-left:3px solid var(--aqua2);border-radius:10px;padding:16px 20px;margin:24px 0;font-size:.98rem}
+    .callout b{color:var(--aqua)}
+    .diagram{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px;margin:28px 0}
+    .diagram figcaption{text-align:center;color:var(--muted);font-size:.82rem;margin-top:12px}
+    .spec{width:100%;border-collapse:collapse;margin:18px 0;font-size:.94rem}
+    .spec th,.spec td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--border);vertical-align:top}
+    .spec th{font-family:'Sora';font-weight:600;color:var(--aqua);background:var(--cream)}
+    .tscroll{overflow-x:auto}
+    ul,ol{padding-left:22px}
+    li{margin:8px 0}
+    .refs{margin-top:14px;font-size:.9rem}
+    .refs li{margin:9px 0;color:var(--muted)}
+    .refs a{color:var(--aqua)}
+    .disc{background:var(--cream);border-left:3px solid var(--aqua2);padding:14px 18px;border-radius:8px;font-size:.82rem;color:var(--muted);margin:34px 0 0}
+    .sponsor{font-size:.85rem;color:var(--soft);margin:26px 0 0;padding:12px 18px;background:linear-gradient(135deg,rgba(143,247,232,.06),rgba(94,230,208,.03));border:1px solid var(--border);border-radius:10px}
+    .sponsor a{color:var(--aqua);font-weight:600}
+    .cta{display:inline-block;background:linear-gradient(135deg,#9BF7EA,#34D6C2 42%,#3AA8FF);color:#04140F;font-weight:600;padding:14px 30px;border-radius:999px;text-decoration:none;margin-top:14px}
+    .nextprev{display:flex;justify-content:space-between;gap:12px;margin-top:40px;font-size:.9rem}
+    footer{border-top:1px solid var(--border);margin-top:52px;padding-top:26px;font-size:.8rem;color:var(--muted)}</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="topnav">
+      <a class="brand" href="../index.html"><span>◆</span> Free Peptide University</a>
+      <a href="../index.html">Enter the library →</a>
+    </nav>
+    <div class="eyebrow">Advanced Track · 3 of 5</div>
+    <h1>Half-Life Engineering</h1>
+    <p class="sub">Lipidation, albumin-hitchhiking, PEGylation and DAC — the real magic behind weekly drugs</p>
+    <h2>The core problem</h2>
+<p>Natural peptides are usually cleared from the body in <strong>minutes</strong>. Native GLP-1's half-life is roughly <strong>2 minutes</strong> — the enzyme DPP-4 chops it up almost immediately.<sup><a href='#r1'>1</a></sup> A drug you'd have to inject every few minutes is useless. The entire modern peptide-drug industry is, in a sense, the science of making short-lived peptides last.</p><h2>The toolkit</h2>
+<figure class="diagram"><svg viewBox="0 0 560 170" width="100%" role="img" aria-label="Half-life extension by albumin binding"><text x="20" y="30" font-size="12" fill="#8FA0BD" font-family="Inter">native peptide (t½ ≈ 2 min)</text><circle cx="60" cy="70" r="16" fill="#34D6C2"/><path d="M84 70 H180" stroke="#6E7C99" stroke-width="2" stroke-dasharray="3 5"/><text x="200" y="74" font-size="11" fill="#D08770" font-family="Inter">cleared fast (DPP-4)</text><text x="20" y="120" font-size="12" fill="#8FA0BD" font-family="Inter">+ fatty-acid chain → binds albumin (t½ days)</text><circle cx="60" cy="150" r="16" fill="#34D6C2"/><path d="M76 150 q18 -14 34 0" stroke="#E7C56B" stroke-width="3" fill="none"/><circle cx="140" cy="150" r="26" fill="none" stroke="#7DC4FF" stroke-width="2"/><text x="140" y="154" text-anchor="middle" font-size="10" fill="#7DC4FF" font-family="Inter">albumin</text><path d="M172 150 H300" stroke="#5FE0B0" stroke-width="2"/><text x="320" y="154" font-size="11" fill="#5FE0B0" font-family="Inter">protected → weekly dosing</text></svg><figcaption>A fatty-acid chain lets a peptide hitch onto albumin, hiding it from clearance — the trick that turns a 2-minute molecule into a once-weekly drug.</figcaption></figure><ul><li><strong>Lipidation (acylation):</strong> attach a fatty-acid chain so the molecule reversibly <strong>binds albumin</strong> — the blood's most abundant protein — hiding from clearance. Semaglutide's C18 diacid chain pushes its half-life to ~165 hours (weekly).<sup><a href='#r1'>1</a></sup></li><li><strong>Amino-acid substitutions</strong> that make the peptide resist DPP-4.</li><li><strong>PEGylation:</strong> attach polyethylene-glycol to increase size and slow clearance.</li><li><strong>DAC (Drug-Affinity Complex):</strong> a group that binds albumin — the reason <a href='../compounds/cjc-1295-no-dac.html'>CJC-1295 with vs without DAC</a> behaves so differently (days vs minutes).</li></ul><h2>Why 'No-DAC' vs 'DAC' matters</h2>
+<div class='callout'><b>Read the suffix:</b> the same core peptide with an albumin-binding group can go from short-acting to multi-day. "No-DAC" isn't a weaker version — it's a <em>different kinetics profile</em>. Recognizing modifications (DAC, acylation, PEG) tells you how often something is meant to act and how long it lingers.</div><h2>The lesson</h2>
+<p>When you see a peptide marketed as "long-acting" or "weekly," ask <em>what modification</em> makes it so. The mechanism (the receptor) tells you <em>what</em> it does; the half-life engineering tells you <em>how long and how often</em>.</p>
+    <h2>Further reading — primary sources</h2>
+    <ol class="refs"><li>Peptide half-life extension — lipidation, albumin binding, PEGylation (review). <a href="https://pubs.acs.org/doi/10.1021/acsmedchemlett.8b00226" target="_blank" rel="noopener">ACS Med. Chem. Lett.</a></li><li>Peptide Therapeutics 2.0 — review. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7287585/" target="_blank" rel="noopener">PMC7287585</a></li></ol>
+    <p class="sponsor">This free curriculum is made possible by our sponsor, <a href="https://pureluxbio.com/?utm_source=freepeptideuniversity&amp;utm_medium=sponsor&amp;utm_campaign=chapter-half-life-engineering" target="_blank" rel="noopener sponsored">PureLux Bio</a> — U.S.-made research-grade peptides.</p>
+    <p><a class="cta" href="../compounds/index.html">Apply it → browse the 75-compound library</a></p>
+    <div class="disc">For educational and research purposes only. This content is not medical advice. Compounds referenced are research use only unless noted as approved drugs, and nothing here is an instruction to use, prepare, or administer anything. Free Peptide University does not sell compounds.</div>
+    <footer>Free Peptide University is an independent educational resource, made free to the public through the sponsorship of Adonis TRT and <a href="https://pureluxbio.com/?utm_source=freepeptideuniversity&amp;utm_medium=sponsor&amp;utm_campaign=chapter-footer" target="_blank" rel="noopener sponsored">PureLux Bio</a>. · <a href="../privacy.html">Privacy</a> · <a href="../terms.html">Terms</a></footer>
+  </div>
+</body>
+</html>

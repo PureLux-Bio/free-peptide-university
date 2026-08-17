@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How Peptides Are Made: Solid-Phase Synthesis, Explained | Free Peptide University</title>
+  <meta name="description" content="How peptides are actually manufactured: solid-phase peptide synthesis (SPPS), Boc vs Fmoc chemistry, purification, and why short natural sequences are hard to patent." />
+  <link rel="canonical" href="https://freepeptideuniversity.com/chapters/advanced-how-peptides-are-made.html" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#060912" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Free Peptide University" />
+  <meta property="og:title" content="How Peptides Are Made: Solid-Phase Synthesis, Explained" />
+  <meta property="og:description" content="How peptides are actually manufactured: solid-phase peptide synthesis (SPPS), Boc vs Fmoc chemistry, purification, and why short natural sequences are hard to patent." />
+  <meta property="og:url" content="https://freepeptideuniversity.com/chapters/advanced-how-peptides-are-made.html" />
+  <meta property="og:image" content="https://freepeptideuniversity.com/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How Peptides Are Made: Solid-Phase Synthesis, Explained", "description": "How peptides are actually manufactured: solid-phase peptide synthesis (SPPS), Boc vs Fmoc chemistry, purification, and why short natural sequences are hard to patent.", "author": {"@type": "Organization", "name": "Free Peptide University"}, "publisher": {"@type": "Organization", "name": "Free Peptide University"}, "mainEntityOfPage": "https://freepeptideuniversity.com/chapters/advanced-how-peptides-are-made.html", "image": "https://freepeptideuniversity.com/og-image.jpg", "datePublished": "2026-08-17", "dateModified": "2026-08-17"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Free Peptide University", "item": "https://freepeptideuniversity.com/"}, {"@type": "ListItem", "position": 2, "name": "Advanced Track"}, {"@type": "ListItem", "position": 3, "name": "How Peptides Are Made", "item": "https://freepeptideuniversity.com/chapters/advanced-how-peptides-are-made.html"}]}</script>
+  <style>:root{--bg:#060912;--surface:#101829;--cream:#0A0F1C;--text:#EAF2FF;--soft:#AEBCD8;--muted:#6E7C99;--aqua:#7DEBDC;--aqua2:#34D6C2;--border:rgba(94,230,208,.20)}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.75;letter-spacing:.2px;-webkit-font-smoothing:antialiased;background-image:linear-gradient(rgba(94,230,208,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(94,230,208,.03) 1px,transparent 1px);background-size:46px 46px}
+    .wrap{max-width:840px;margin:0 auto;padding:56px 28px 90px}
+    h1,h2,h3{font-family:'Sora',sans-serif;line-height:1.2;color:var(--text)}
+    h1{font-size:clamp(2rem,5vw,3rem);margin:8px 0 6px}
+    h2{font-size:1.5rem;margin:44px 0 12px}
+    h3{font-size:1.12rem;margin:24px 0 6px}
+    p,li{color:var(--soft);font-size:1.03rem}
+    a{color:var(--aqua)}
+    strong{color:var(--text)}
+    sup a{font-size:.7em;text-decoration:none;padding:0 1px}
+    .eyebrow{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--aqua);font-weight:600}
+    .sub{color:var(--muted);font-size:1.05rem;margin:0 0 8px}
+    .meta{color:var(--muted);font-size:.85rem;margin:0 0 22px}
+    .topnav{display:flex;justify-content:space-between;align-items:center;margin-bottom:40px;font-size:.92rem}
+    .topnav .brand{font-family:'Sora';font-weight:700;color:var(--text);text-decoration:none}
+    .topnav .brand span{color:var(--aqua)}
+    .callout{background:linear-gradient(135deg,rgba(143,247,232,.14),rgba(94,230,208,.06));border-left:3px solid var(--aqua2);border-radius:10px;padding:16px 20px;margin:24px 0;font-size:.98rem}
+    .callout b{color:var(--aqua)}
+    .diagram{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px;margin:28px 0}
+    .diagram figcaption{text-align:center;color:var(--muted);font-size:.82rem;margin-top:12px}
+    .spec{width:100%;border-collapse:collapse;margin:18px 0;font-size:.94rem}
+    .spec th,.spec td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--border);vertical-align:top}
+    .spec th{font-family:'Sora';font-weight:600;color:var(--aqua);background:var(--cream)}
+    .tscroll{overflow-x:auto}
+    ul,ol{padding-left:22px}
+    li{margin:8px 0}
+    .refs{margin-top:14px;font-size:.9rem}
+    .refs li{margin:9px 0;color:var(--muted)}
+    .refs a{color:var(--aqua)}
+    .disc{background:var(--cream);border-left:3px solid var(--aqua2);padding:14px 18px;border-radius:8px;font-size:.82rem;color:var(--muted);margin:34px 0 0}
+    .sponsor{font-size:.85rem;color:var(--soft);margin:26px 0 0;padding:12px 18px;background:linear-gradient(135deg,rgba(143,247,232,.06),rgba(94,230,208,.03));border:1px solid var(--border);border-radius:10px}
+    .sponsor a{color:var(--aqua);font-weight:600}
+    .cta{display:inline-block;background:linear-gradient(135deg,#9BF7EA,#34D6C2 42%,#3AA8FF);color:#04140F;font-weight:600;padding:14px 30px;border-radius:999px;text-decoration:none;margin-top:14px}
+    .nextprev{display:flex;justify-content:space-between;gap:12px;margin-top:40px;font-size:.9rem}
+    footer{border-top:1px solid var(--border);margin-top:52px;padding-top:26px;font-size:.8rem;color:var(--muted)}</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="topnav">
+      <a class="brand" href="../index.html"><span>◆</span> Free Peptide University</a>
+      <a href="../index.html">Enter the library →</a>
+    </nav>
+    <div class="eyebrow">Advanced Track · 1 of 5</div>
+    <h1>How Peptides Are Made</h1>
+    <p class="sub">Merrifield's resin, coupling and deprotection cycles — and why it shapes the whole market</p>
+    <h2>The problem SPPS solved</h2>
+<p>A peptide is a precise, ordered chain of amino acids. Building one by classic solution chemistry — making and purifying after every single bond — is brutally slow. In 1963 <strong>Bruce Merrifield</strong> introduced <strong>solid-phase peptide synthesis (SPPS)</strong>, which won him the 1984 Nobel Prize in Chemistry and made modern peptide drugs possible.<sup><a href='#r1'>1</a></sup></p><h2>The cycle</h2>
+<p>The trick is to anchor the growing chain to an insoluble <strong>resin bead</strong>, so excess reagents and byproducts can simply be washed away between steps. Each amino acid is added by repeating a cycle:</p><figure class="diagram"><svg viewBox="0 0 560 150" width="100%" role="img" aria-label="Solid-phase peptide synthesis cycle"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9BF7EA"/><stop offset="1" stop-color="#34D6C2"/></linearGradient></defs><circle cx="70" cy="75" r="26" fill="#0B1322" stroke="#34D6C2" stroke-width="2"/><text x="70" y="79" text-anchor="middle" font-size="11" fill="#AEBCD8" font-family="Inter">resin</text><path d="M104 75 H175" stroke="#34D6C2" stroke-width="2" marker-end="url(#a)"/><circle cx="205" cy="75" r="18" fill="url(#g)"/><text x="205" y="112" text-anchor="middle" font-size="10" fill="#8FA0BD" font-family="Inter">couple aa</text><path d="M228 75 H300" stroke="#34D6C2" stroke-width="2"/><circle cx="330" cy="75" r="18" fill="url(#g)"/><circle cx="368" cy="75" r="18" fill="url(#g)"/><text x="349" y="112" text-anchor="middle" font-size="10" fill="#8FA0BD" font-family="Inter">deprotect · repeat</text><path d="M392 75 H460" stroke="#34D6C2" stroke-width="2" stroke-dasharray="5 6"/><circle cx="490" cy="75" r="18" fill="url(#g)"/><circle cx="510" cy="60" r="14" fill="url(#g)" opacity=".7"/><circle cx="510" cy="90" r="14" fill="url(#g)" opacity=".7"/><text x="500" y="120" text-anchor="middle" font-size="10" fill="#8FA0BD" font-family="Inter">cleave → peptide</text><defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6" fill="#34D6C2"/></marker></defs></svg><figcaption>Solid-phase peptide synthesis: build the chain one amino acid at a time on an anchored resin — couple, deprotect, repeat — then cleave the finished peptide off.</figcaption></figure><ol><li><strong>Couple</strong> the next (protected) amino acid to the chain's free end.</li><li><strong>Deprotect</strong> — remove the temporary protecting group to expose the next reaction site.</li><li><strong>Wash &amp; repeat</strong> — until the full sequence is built.</li><li><strong>Cleave</strong> the finished peptide off the resin and remove side-chain protections.</li></ol><h2>Boc vs Fmoc</h2>
+<p>Two protecting-group strategies dominate: <strong>Boc</strong> (older, uses strong acid) and <strong>Fmoc</strong> (milder base-removable chemistry, now the workhorse). The choice affects which sequences and modifications are practical.<sup><a href='#r1'>1</a></sup></p><div class='callout'><b>Why purity is everything:</b> because the chain is built stepwise, any missed coupling creates a slightly-wrong "deletion" peptide. That's exactly why the <a href='../chapters/myth-vs-research.html'>Certificate of Analysis</a> (HPLC purity + mass spec) matters so much for research material.</div><h2>Why this shapes the whole market</h2>
+<p>A short, naturally-occurring sequence is <strong>hard to patent</strong>. No patent means no company will fund the expensive human trials — which is precisely why compounds like <a href='../compounds/bpc-157.html'>BPC-157</a> have striking animal data but almost no human trials, and end up sold "research use only." The chemistry that makes peptides cheap to make is the same reason many never become approved drugs.</p>
+    <h2>Further reading — primary sources</h2>
+    <ol class="refs"><li>Mitchell — Bruce Merrifield and solid-phase peptide synthesis: a historical assessment. <a href="https://onlinelibrary.wiley.com/doi/10.1002/bip.20925" target="_blank" rel="noopener">Peptide Science (Wiley)</a></li><li>Peptide Therapeutics 2.0 — review. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7287585/" target="_blank" rel="noopener">PMC7287585</a></li></ol>
+    <p class="sponsor">This free curriculum is made possible by our sponsor, <a href="https://pureluxbio.com/?utm_source=freepeptideuniversity&amp;utm_medium=sponsor&amp;utm_campaign=chapter-how-peptides-are-made" target="_blank" rel="noopener sponsored">PureLux Bio</a> — U.S.-made research-grade peptides.</p>
+    <p><a class="cta" href="../compounds/index.html">Apply it → browse the 75-compound library</a></p>
+    <div class="disc">For educational and research purposes only. This content is not medical advice. Compounds referenced are research use only unless noted as approved drugs, and nothing here is an instruction to use, prepare, or administer anything. Free Peptide University does not sell compounds.</div>
+    <footer>Free Peptide University is an independent educational resource, made free to the public through the sponsorship of Adonis TRT and <a href="https://pureluxbio.com/?utm_source=freepeptideuniversity&amp;utm_medium=sponsor&amp;utm_campaign=chapter-footer" target="_blank" rel="noopener sponsored">PureLux Bio</a>. · <a href="../privacy.html">Privacy</a> · <a href="../terms.html">Terms</a></footer>
+  </div>
+</body>
+</html>
