@@ -1143,9 +1143,12 @@
   },{passive:true});
 
   /* ---------- 6. EMAIL CAPTURE (instant "you're in") ---------- */
-  // Cloudflare Worker (tiny-recipe-43ab) stores signups in KV namespace fpu_emails.
-  // POST is fire-and-forget; if it ever fails the member gate still unlocks.
+  // Two fire-and-forget destinations, both non-blocking (gate unlocks regardless):
+  //  1) Cloudflare Worker → KV backup list (owned, survives CRM outages).
+  //  2) PureLux CRM "FPU Site Signups" form → contact + "Free Peptide University"
+  //     audience (SUBSCRIBED), so signups are immediately marketable in the CRM.
   const SUBSCRIBE_ENDPOINT='https://tiny-recipe-43ab.donny-3e2.workers.dev';
+  const CRM_FORM_ENDPOINT='https://mypureluxbio.com/v1/forms/ZudZmFP9JQP90b07/submit';
   function submitEmail(e, inPopup){
     e.preventDefault();
     const emailVal=e.target.querySelector('input[type=email]')?.value?.trim()||'';
@@ -1158,9 +1161,14 @@
     }
     try{ localStorage.setItem('fpu_email', emailVal); }catch(_){}
     if(emailVal){
+      const src=inPopup?'popup':'inline';
       try{
         fetch(SUBSCRIBE_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},
-          body:JSON.stringify({email:emailVal,source:inPopup?'popup':'inline'})}).catch(()=>{});
+          body:JSON.stringify({email:emailVal,source:src})}).catch(()=>{});
+      }catch(_){}
+      try{
+        fetch(CRM_FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},
+          body:JSON.stringify({fields:{email:emailVal},referrer:'https://freepeptideuniversity.com/#'+src})}).catch(()=>{});
       }catch(_){}
     }
     setMember(); // unlock members-only Reference
