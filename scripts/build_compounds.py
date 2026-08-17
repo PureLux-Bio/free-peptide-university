@@ -152,13 +152,89 @@ def sync_sitemap(slugs):
     return added
 
 
+# Hand-authored pages (not generated here) that still belong in the index.
+EXTRA_FOR_INDEX = [
+    {"slug": "bpc-157", "name": "BPC-157",
+     "badges": {"class": "Healing & tissue-repair research",
+                "evidence": "Evidence: preclinical + early pilots",
+                "reg": "RUO · not FDA-approved · WADA-prohibited"}},
+    {"slug": "semaglutide", "name": "Semaglutide",
+     "badges": {"class": "Metabolic · incretin (GLP-1)",
+                "evidence": "Evidence: large Phase 3 RCTs", "eviCls": "b-evi-trial",
+                "reg": "FDA-approved drug", "regCls": "b-reg-ok"}},
+]
+
+
+def index_page():
+    cards = ""
+    for c in sorted(COMPOUNDS + EXTRA_FOR_INDEX, key=lambda x: x["name"].lower()):
+        b = c["badges"]
+        cards += (f'<a class="cx" href="{c["slug"]}.html">'
+                  f'<div class="cxtop"><span class="badge {b.get("regCls","b-reg")}">{b["reg"]}</span></div>'
+                  f'<h3>{c["name"]}</h3><p class="cxcls">{b["class"]}</p>'
+                  f'<p class="cxevi">{b["evidence"]}</p></a>')
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compound Library — In-Depth Peptide Profiles | Free Peptide University</title>
+  <meta name="description" content="In-depth, citations-first profiles of research peptides and related compounds — mechanism, pharmacokinetics, evidence tier, and regulatory status for each." />
+  <link rel="canonical" href="{BASE}/compounds/" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#060912" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Compound Library — In-Depth Peptide Profiles" />
+  <meta property="og:description" content="Citations-first profiles: mechanism, PK, evidence tier, and regulatory status per compound." />
+  <meta property="og:url" content="{BASE}/compounds/" />
+  <meta property="og:image" content="{BASE}/og-image.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+  <style>{STYLE}
+    .cxgrid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;margin-top:30px}}
+    .cx{{display:block;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;text-decoration:none;transition:transform .4s var(--ease,ease),box-shadow .4s;box-shadow:0 12px 30px rgba(0,0,0,.42)}}
+    .cx:hover{{transform:translateY(-4px);box-shadow:0 26px 60px rgba(0,0,0,.55);border-color:rgba(94,230,208,.4)}}
+    .cxtop{{margin-bottom:12px}}
+    .cx h3{{margin:0 0 4px;font-size:1.15rem;color:var(--text)}}
+    .cxcls{{margin:0;font-size:.82rem;color:var(--aqua)}}
+    .cxevi{{margin:6px 0 0;font-size:.78rem;color:var(--muted)}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="topnav">
+      <a class="brand" href="../index.html"><span>◆</span> Free Peptide University</a>
+      <a href="../index.html">Enter the library →</a>
+    </nav>
+    <div class="eyebrow">Compound Library</div>
+    <h1>In-depth compound profiles</h1>
+    <p class="sub">Citations-first pages — mechanism, pharmacokinetics, the real evidence tier, and regulatory status for each compound. New profiles added regularly.</p>
+    <div class="ruo"><b>Research framed.</b> Educational only — not medical advice, not dosing. Each page states whether a compound is FDA-approved, investigational, or research-use-only.</div>
+    <div class="cxgrid">{cards}</div>
+    <p class="sponsor" style="margin-top:34px">Made possible by our sponsor, <a href="https://pureluxbio.com/?utm_source=freepeptideuniversity&amp;utm_medium=sponsor&amp;utm_campaign=compounds-index" target="_blank" rel="noopener sponsored">PureLux Bio</a> — U.S.-made research-grade peptides.</p>
+    <footer>Free Peptide University is an independent educational resource, made free to the public through the sponsorship of Adonis TRT and PureLux Bio. · <a href="../privacy.html">Privacy</a> · <a href="../terms.html">Terms</a></footer>
+  </div>
+</body>
+</html>
+"""
+
+
 def main():
     os.makedirs(os.path.join(ROOT, "compounds"), exist_ok=True)
     for c in COMPOUNDS:
         out = os.path.join(ROOT, "compounds", f"{c['slug']}.html")
         open(out, "w").write(render(c))
         print("wrote", out)
+    open(os.path.join(ROOT, "compounds", "index.html"), "w").write(index_page())
+    print("wrote compounds/index.html")
     added = sync_sitemap([c["slug"] for c in COMPOUNDS])
+    # ensure the index is in the sitemap too
+    sm_path = os.path.join(ROOT, "sitemap.xml")
+    sm = open(sm_path).read()
+    if f"{BASE}/compounds/</loc>" not in sm:
+        sm = sm.replace("</urlset>", f'  <url><loc>{BASE}/compounds/</loc><lastmod>2026-08-17</lastmod></url>\n</urlset>')
+        open(sm_path, "w").write(sm)
     print("sitemap added:", added or "(all already present)")
 
 
@@ -241,6 +317,91 @@ COMPOUNDS = [
     "refs": [
       {"n": "1", "label": "Growth-hormone secretagogues — review.", "cite": "rco2.9 (Wiley)", "url": "https://onlinelibrary.wiley.com/doi/full/10.1002/rco2.9"},
       {"n": "2", "label": "The ghrelin / GHS-R pathway (review).", "cite": "PMC5412382", "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5412382/"},
+    ],
+  },
+  {
+    "slug": "ghk-cu", "name": "GHK-Cu",
+    "title": "GHK-Cu (Copper Peptide): Mechanism & Evidence",
+    "sub": "Copper-binding tripeptide (glycyl-histidyl-lysine + Cu²⁺) · skin & tissue-remodeling research",
+    "desc": "A cited profile of GHK-Cu: the copper-tripeptide biology, its gene-expression and collagen effects, where the evidence is strong (topical) vs thin (injectable), and its status.",
+    "badges": {"class": "Cosmetic · skin & tissue-repair", "evidence": "Evidence: cosmetic/preclinical", "reg": "Topical: cosmetic use · Injectable: RUO"},
+    "ruo": "<b>Two very different uses.</b> GHK-Cu is widely used <b>topically in cosmetics</b> (better-supported), and separately sold as an <b>injectable research chemical</b> (RUO, far less human data). This page is educational; it is not medical advice and not a use instruction.",
+    "sections": [
+      {"h": "What it is", "html": "<p>GHK is a naturally occurring <strong>tripeptide</strong> (glycine-histidine-lysine) that avidly <strong>binds copper (Cu²⁺)</strong>; the complex is written GHK-Cu. Levels of GHK in the body decline with age, which framed early interest in it as a repair signal.<sup><a href=\"#r1\">1</a></sup></p>"},
+      {"h": "Proposed mechanism", "html": "<ul><li><strong>Copper delivery &amp; enzyme cofactor support</strong> — copper is required by enzymes involved in connective-tissue crosslinking.</li><li><strong>Collagen / GAG stimulation</strong> — reported to promote synthesis of collagen, elastin, and glycosaminoglycans in skin models.<sup><a href=\"#r1\">1</a></sup></li><li><strong>Gene-expression modulation</strong> — in cell studies GHK-Cu is reported to shift the expression of a large number of genes toward a repair/anti-inflammatory profile.<sup><a href=\"#r2\">2</a></sup></li></ul><div class=\"callout\"><b>Read carefully:</b> most robust data are <em>topical / in-vitro</em>. Systemic (injected) human evidence is limited — the leap from \"resets genes in a dish\" to \"injected anti-aging\" is exactly what Chapter 3 cautions against.</div>"},
+      {"h": "Evidence & status", "html": "<ul><li><strong>Topical:</strong> reasonable cosmetic-science support for skin appearance.</li><li><strong>Injectable/systemic:</strong> preclinical, minimal human; <strong>no Phase III</strong>.</li><li>Not an FDA-approved drug; the injectable form is sold RUO.</li></ul>"},
+    ],
+    "refs": [
+      {"n": "1", "label": "GHK / copper-peptide biology in skin & tissue repair (literature).", "cite": "PubMed: GHK-Cu", "url": "https://pubmed.ncbi.nlm.nih.gov/?term=GHK-Cu+copper+peptide"},
+      {"n": "2", "label": "Peptide Therapeutics 2.0 — review of peptide mechanisms.", "cite": "PMC7287585", "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7287585/"},
+    ],
+  },
+  {
+    "slug": "mots-c", "name": "MOTS-c",
+    "title": "MOTS-c (Mitochondrial-Derived Peptide): Mechanism & Evidence",
+    "sub": "A 16-amino-acid peptide encoded in mitochondrial 12S rRNA · metabolic research",
+    "desc": "A cited profile of MOTS-c: what a mitochondrial-derived peptide is, its AMPK/metabolic mechanism, the exercise-mimetic preclinical data, and its RUO status.",
+    "badges": {"class": "Metabolic · mitochondrial", "evidence": "Evidence: preclinical (early human interest)", "reg": "RUO · not FDA-approved"},
+    "ruo": "<b>Research Use Only.</b> MOTS-c is not an approved medicine and not for human use. Educational only — no dosing or medical advice.",
+    "sections": [
+      {"h": "What it is", "html": "<p>MOTS-c is a <strong>mitochondrial-derived peptide (MDP)</strong> — a short peptide encoded within the mitochondrial <strong>12S rRNA</strong> gene rather than the nuclear genome. Its discovery helped establish that mitochondria themselves encode signaling peptides.<sup><a href=\"#r1\">1</a></sup></p>"},
+      {"h": "Proposed mechanism", "html": "<ul><li><strong>Metabolic regulation via AMPK.</strong> MOTS-c is reported to activate the AMPK energy-sensing pathway, improving insulin sensitivity and glucose handling in animal models.<sup><a href=\"#r1\">1</a></sup></li><li><strong>Stress-responsive gene regulation.</strong> Under metabolic stress it is reported to translocate to the nucleus and influence adaptive gene expression — an \"exercise-mimetic\" theme in the literature.</li></ul>"},
+      {"h": "Evidence & status", "html": "<ul><li><strong>Preclinical:</strong> notable mouse metabolic/exercise data.</li><li><strong>Human:</strong> early interest, limited controlled data; <strong>no Phase III</strong>.</li><li>RUO; not FDA-approved.</li></ul>"},
+    ],
+    "refs": [
+      {"n": "1", "label": "MOTS-c / mitochondrial-derived peptides in metabolism (literature).", "cite": "PubMed: MOTS-c", "url": "https://pubmed.ncbi.nlm.nih.gov/?term=MOTS-c"},
+    ],
+  },
+  {
+    "slug": "tesamorelin", "name": "Tesamorelin",
+    "title": "Tesamorelin (GHRH analog): Mechanism, Approval & Evidence",
+    "sub": "A stabilized GHRH analog · FDA-approved (Egrifta) for HIV-associated lipodystrophy",
+    "desc": "A cited profile of tesamorelin: the GHRH-analog mechanism, its FDA-approved indication, how it differs from RUO secretagogues, and evidence.",
+    "badges": {"class": "GH secretagogue (GHRH analog)", "evidence": "Evidence: Phase 3 (approved indication)", "eviCls": "b-evi-trial", "reg": "FDA-approved (specific indication)", "regCls": "b-reg-ok"},
+    "ruo": "<b>Approved — for a specific indication.</b> Tesamorelin is FDA-approved (Egrifta) to reduce excess visceral fat in HIV-associated lipodystrophy — a narrow, prescription indication. Use for other goals is off-label / not established. Educational only, not medical advice.",
+    "sections": [
+      {"h": "What it is", "html": "<p>Tesamorelin is a synthetic, stabilized analog of <strong>growth-hormone-releasing hormone (GHRH)</strong>. Like <a href=\"cjc-1295-ipamorelin.html\">CJC-1295</a> it works on the GHRH pathway — but unlike those RUO peptides, tesamorelin completed the trials to earn an FDA approval.</p>"},
+      {"h": "Mechanism", "html": "<p>It binds the <strong>GHRH receptor</strong> on the pituitary, stimulating physiological growth-hormone release and raising IGF-1. In its approved indication this reduces visceral adipose tissue.<sup><a href=\"#r1\">1</a></sup></p>"},
+      {"h": "Evidence & status", "html": "<ul><li><strong>Approved:</strong> FDA-approved (Egrifta) for HIV-associated lipodystrophy, backed by Phase 3 trials.<sup><a href=\"#r2\">2</a></sup></li><li><strong>Other uses:</strong> not established; a good example of \"approved for X does not mean proven for Y.\"</li><li><strong>WADA:</strong> GH secretagogues are prohibited (S2) for tested athletes.</li></ul>"},
+    ],
+    "refs": [
+      {"n": "1", "label": "Growth-hormone secretagogues — review.", "cite": "rco2.9 (Wiley)", "url": "https://onlinelibrary.wiley.com/doi/full/10.1002/rco2.9"},
+      {"n": "2", "label": "Tesamorelin clinical literature.", "cite": "PubMed: tesamorelin", "url": "https://pubmed.ncbi.nlm.nih.gov/?term=tesamorelin"},
+    ],
+    "discExtra": "Tesamorelin is a prescription drug; obtain and use medicines only under a licensed professional.",
+  },
+  {
+    "slug": "pt-141", "name": "PT-141",
+    "title": "PT-141 / Bremelanotide (Melanocortin agonist): Mechanism & Evidence",
+    "sub": "A melanocortin-receptor agonist · FDA-approved as Vyleesi (bremelanotide)",
+    "desc": "A cited profile of PT-141 (bremelanotide): the central melanocortin (MC4R) mechanism, its FDA approval for HSDD, and how it differs from vascular sexual-health drugs.",
+    "badges": {"class": "Melanocortin · sexual-health research", "evidence": "Evidence: Phase 3 (approved indication)", "eviCls": "b-evi-trial", "reg": "FDA-approved (specific indication)", "regCls": "b-reg-ok"},
+    "ruo": "<b>Approved — for a specific indication.</b> Bremelanotide (Vyleesi) is FDA-approved for hypoactive sexual desire disorder (HSDD) in premenopausal women — prescription-only. \"PT-141\" sold as a research chemical is not the approved product. Educational only, not medical advice.",
+    "sections": [
+      {"h": "What it is", "html": "<p>PT-141 (bremelanotide) is a <strong>melanocortin-receptor agonist</strong> derived from the melanotan lineage. Unlike PDE5 inhibitors (which act on blood flow), it works <strong>centrally in the brain</strong>.</p>"},
+      {"h": "Mechanism", "html": "<p>It activates <strong>melanocortin-4 receptor (MC4R)</strong> — a GPCR involved in central pathways of sexual desire and arousal.<sup><a href=\"#r2\">2</a></sup> Acting on desire circuitry rather than vasculature is what distinguishes the melanocortin approach.<sup><a href=\"#r1\">1</a></sup></p>"},
+      {"h": "Evidence & status", "html": "<ul><li><strong>Approved:</strong> FDA-approved (Vyleesi) for HSDD in premenopausal women, on Phase 3 evidence.<sup><a href=\"#r1\">1</a></sup></li><li>Common side effect: transient nausea; flushing.</li><li>The melanotan family also affects pigmentation — a reminder these receptors are pleiotropic.</li></ul>"},
+    ],
+    "refs": [
+      {"n": "1", "label": "Bremelanotide / PT-141 clinical literature.", "cite": "PubMed: bremelanotide", "url": "https://pubmed.ncbi.nlm.nih.gov/?term=bremelanotide"},
+      {"n": "2", "label": "Kobilka, GPCR structure (MC4R is a GPCR) — Nobel review.", "cite": "Angew. Chem.", "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/anie.201302116"},
+    ],
+    "discExtra": "Bremelanotide is a prescription drug; obtain and use medicines only under a licensed professional.",
+  },
+  {
+    "slug": "nad", "name": "NAD+",
+    "title": "NAD+ : What It Actually Is, Mechanism & Evidence",
+    "sub": "Nicotinamide adenine dinucleotide — a coenzyme (not a peptide) · longevity research",
+    "desc": "A cited profile of NAD+: why it's a coenzyme rather than a peptide, its role in energy metabolism and sirtuins, and the honest state of the human longevity evidence.",
+    "badges": {"class": "Longevity · cellular coenzyme", "evidence": "Evidence: preclinical / emerging human", "reg": "Not a peptide · not an approved drug"},
+    "ruo": "<b>First, a correction the space gets wrong:</b> NAD+ is a <b>coenzyme (a dinucleotide), not a peptide</b>. It's grouped with peptides in wellness marketing, but it's a different class of molecule. This is educational only, not medical advice.",
+    "sections": [
+      {"h": "What it is", "html": "<p><strong>NAD+ (nicotinamide adenine dinucleotide)</strong> is a coenzyme present in every cell, central to <strong>energy metabolism</strong> — it carries electrons in the reactions that make ATP. It is also a substrate consumed by repair and signaling enzymes.</p>"},
+      {"h": "Mechanism / why the interest", "html": "<ul><li><strong>Redox metabolism:</strong> NAD+/NADH cycling powers the electron-transport chain.</li><li><strong>Sirtuins &amp; PARPs:</strong> NAD+ is the fuel for sirtuins (longevity-associated enzymes) and DNA-repair PARPs; cellular NAD+ declines with age, which drives the \"restore NAD+\" hypothesis.<sup><a href=\"#r1\">1</a></sup></li></ul><div class=\"callout\"><b>Honest framing:</b> the biology is real and important; whether <em>supplementing</em> NAD+ (or precursors like NR/NMN) meaningfully slows human aging is <b>not established</b> — human trials are early and mixed.</div>"},
+      {"h": "Evidence & status", "html": "<ul><li><strong>Preclinical:</strong> extensive; NAD+ decline and repletion are heavily studied in animals.</li><li><strong>Human:</strong> early trials of precursors (NR, NMN); clinical benefit on aging outcomes remains unproven.</li><li>Not an FDA-approved drug; precursors are sold as supplements (regulatory status has shifted).</li></ul>"},
+    ],
+    "refs": [
+      {"n": "1", "label": "NAD+ metabolism, sirtuins and aging (literature).", "cite": "PubMed: NAD+ aging", "url": "https://pubmed.ncbi.nlm.nih.gov/?term=NAD%2B+aging+sirtuin"},
     ],
   },
 ]
