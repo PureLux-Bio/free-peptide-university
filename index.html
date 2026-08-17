@@ -1143,10 +1143,9 @@
   },{passive:true});
 
   /* ---------- 6. EMAIL CAPTURE (instant "you're in") ---------- */
-  // Cloudflare Worker endpoint that stores signups in KV (namespace: fpu_emails).
-  // Deploy the Worker named "fpu-subscribe" to make this live; until then the POST
-  // fails silently and the member gate still unlocks (capture is fire-and-forget).
-  const SUBSCRIBE_ENDPOINT='https://fpu-subscribe.donny-3e2.workers.dev';
+  // Cloudflare Worker (tiny-recipe-43ab) stores signups in KV namespace fpu_emails.
+  // POST is fire-and-forget; if it ever fails the member gate still unlocks.
+  const SUBSCRIBE_ENDPOINT='https://tiny-recipe-43ab.donny-3e2.workers.dev';
   function submitEmail(e, inPopup){
     e.preventDefault();
     const emailVal=e.target.querySelector('input[type=email]')?.value?.trim()||'';
