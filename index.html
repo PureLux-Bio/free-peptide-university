@@ -1143,8 +1143,13 @@
   },{passive:true});
 
   /* ---------- 6. EMAIL CAPTURE (instant "you're in") ---------- */
+  // Cloudflare Worker endpoint that stores signups in KV (namespace: fpu_emails).
+  // Deploy the Worker named "fpu-subscribe" to make this live; until then the POST
+  // fails silently and the member gate still unlocks (capture is fire-and-forget).
+  const SUBSCRIBE_ENDPOINT='https://fpu-subscribe.donny-3e2.workers.dev';
   function submitEmail(e, inPopup){
     e.preventDefault();
+    const emailVal=e.target.querySelector('input[type=email]')?.value?.trim()||'';
     if(inPopup){
       document.getElementById('popupForm').style.display='none';
       document.getElementById('popupSuccess').style.display='block';
@@ -1152,7 +1157,13 @@
       const form=e.target;
       form.innerHTML='<p style="margin:0;color:var(--gold-deep);font-weight:600;font-family:Sora;font-size:1.2rem">✦ You\'re in — the library and Reference are unlocked.</p>';
     }
-    try{ localStorage.setItem('fpu_email', e.target.querySelector('input[type=email]')?.value || ''); }catch(_){}
+    try{ localStorage.setItem('fpu_email', emailVal); }catch(_){}
+    if(emailVal){
+      try{
+        fetch(SUBSCRIBE_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},
+          body:JSON.stringify({email:emailVal,source:inPopup?'popup':'inline'})}).catch(()=>{});
+      }catch(_){}
+    }
     setMember(); // unlock members-only Reference
     return false;
   }
