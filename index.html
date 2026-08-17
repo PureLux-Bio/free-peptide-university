@@ -221,6 +221,29 @@
     .grid{display:grid;gap:26px}
     .grid-3{grid-template-columns:repeat(3,1fr)}
     .grid-2{grid-template-columns:repeat(2,1fr)}
+    /* News / This Week in Peptides */
+    .newsbar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:22px 0 10px}
+    .ruo-chip{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#E7C56B;background:rgba(231,197,107,.08);border:1px solid rgba(231,197,107,.34);padding:6px 14px;border-radius:999px}
+    .news-updated{font-size:.8rem}
+    .news-filters{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 22px}
+    .news-filters button{font-family:'Inter';font-size:.78rem;font-weight:500;color:var(--charcoal-soft);background:var(--surface-2);border:1px solid rgba(94,230,208,.18);padding:7px 15px;border-radius:999px;cursor:pointer;transition:.3s var(--ease)}
+    .news-filters button:hover{color:var(--gold-deep);border-color:var(--gold)}
+    .news-filters button.on{color:#04140F;background:var(--gold-grad);border-color:transparent;font-weight:600}
+    .news-list{display:flex;flex-direction:column;gap:14px}
+    .nitem{display:block;background:var(--surface);border:1px solid rgba(94,230,208,.14);border-left:3px solid var(--gold);border-radius:14px;padding:18px 22px;box-shadow:var(--shadow-sm);transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .4s}
+    .nitem:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-left-color:var(--gold-deep)}
+    .nitem .ntop{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:9px}
+    .tier{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:4px 10px;border-radius:6px}
+    .tier-strong{color:#5FE0B0;background:rgba(52,214,194,.14)}      /* RCT / Phase 3 / Meta */
+    .tier-trial{color:#7DC4FF;background:rgba(58,168,255,.13)}       /* trials, clinical */
+    .tier-early{color:#C9A9F5;background:rgba(160,120,245,.13)}      /* preclinical / study */
+    .tier-reg{color:#E7C56B;background:rgba(231,197,107,.12)}        /* FDA / regulatory */
+    .nitem .nsrc{font-size:.72rem;color:var(--muted);letter-spacing:.03em}
+    .nitem h3{font-size:1.05rem;line-height:1.35;margin:0 0 8px;color:var(--charcoal)}
+    .nitem .nmeta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:.78rem;color:var(--muted)}
+    .nitem .nmeta .go{color:var(--gold-deep);font-weight:500;margin-left:auto}
+    .news-empty{color:var(--muted);padding:30px 0;text-align:center}
+
     .card{background:var(--surface);border-radius:var(--radius);padding:38px 32px;box-shadow:var(--shadow-sm);border:1px solid rgba(94,230,208,.14);transition:transform .55s var(--ease),box-shadow .55s var(--ease)}
     .card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
     .card .ic{width:54px;height:54px;border-radius:14px;background:linear-gradient(135deg,rgba(143,247,232,.3),rgba(94,230,208,.18));display:grid;place-items:center;margin-bottom:22px;color:var(--gold-deep)}
@@ -427,6 +450,7 @@
         <a data-view="library" onclick="showView('library')">Library</a>
         <a data-view="stacks" onclick="showView('stacks')">Stacks</a>
         <a data-view="blog" onclick="showView('blog')">Blog</a>
+        <a data-view="news" onclick="showView('news')">News</a>
         <a data-view="community" onclick="showView('community')">Community</a>
         <a data-view="tools" onclick="showView('tools')">Tools</a>
         <a data-view="reference" onclick="showView('reference')">Reference</a>
@@ -709,6 +733,26 @@
     </section>
   </div>
 
+  <!-- ===================== VIEW: NEWS ============================ -->
+  <!-- ============================================================= -->
+  <div class="view" id="view-news">
+    <section class="section-sm">
+      <div class="wrap">
+        <div class="reveal" style="margin-bottom:6px">
+          <div class="eyebrow">This Week In Peptides</div>
+          <h2>The research, as it happens</h2>
+          <p class="muted" style="max-width:680px;margin:14px 0 0">New peer-reviewed papers, clinical trials, and FDA actions — pulled automatically from PubMed, ClinicalTrials.gov and the FDA, every item tagged by evidence level and linked to the primary source. No hype, no summaries of what we wish were true — just what the literature actually shows.</p>
+        </div>
+        <div class="newsbar reveal">
+          <span class="ruo-chip">Research Use Only · educational · not medical advice</span>
+          <span class="news-updated muted" id="newsUpdated"></span>
+        </div>
+        <div class="news-filters reveal" id="newsFilters"></div>
+        <div class="news-list reveal" id="newsList"></div>
+      </div>
+    </section>
+  </div>
+
   <!-- ===================== VIEW: REFERENCE (members gated) ======= -->
   <!-- ============================================================= -->
   <div class="view" id="view-reference">
@@ -865,6 +909,7 @@
     });
     document.getElementById('nav').classList.remove('open');
     if(name==='blog') backToBlog();
+    if(name==='news') renderNews();
     if(name==='reference') renderReference();
     window.scrollTo({top:0,behavior:'smooth'});
     runReveal();
@@ -1401,6 +1446,53 @@
     if(conc<=0||mg<=0){ out.innerHTML='<span class="muted">Enter both values.</span>'; return; }
     const ml=mg/conc, units=ml*100;
     out.innerHTML=`<div class="big">${units.toFixed(1)} units</div><div class="muted" style="font-size:.8rem">= ${ml.toFixed(3)} mL on a 100-unit syringe, to draw the ${mg} mg you entered at ${conc} mg/mL</div>`;
+  }
+
+  /* ---------- 16. NEWS — "This Week in Peptides" (auto-pulled) ---------- */
+  let NEWS_DATA=null, NEWS_FILTER='all';
+  function tierClass(t){
+    const s=(t||'').toLowerCase();
+    if(/rct|phase 3|meta|systematic/.test(s)) return 'tier-strong';
+    if(/trial|phase/.test(s)) return 'tier-trial';
+    if(/regulatory|fda/.test(s)) return 'tier-reg';
+    return 'tier-early';
+  }
+  function newsItemHTML(it){
+    const tc=tierClass(it.tier);
+    const d=it.date?new Date(it.date+'T00:00:00').toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'}):'';
+    return `<a class="nitem" href="${it.url}" target="_blank" rel="noopener">
+      <div class="ntop"><span class="tier ${tc}">${it.tier||'Study'}</span><span class="nsrc">${it.source||''}</span></div>
+      <h3>${it.title.replace(/</g,'&lt;')}</h3>
+      <div class="nmeta"><span>${it.meta||''}</span>${d?`<span>${d}</span>`:''}<span class="go">Read source →</span></div>
+    </a>`;
+  }
+  function renderNews(){
+    const list=document.getElementById('newsList');
+    const upd=document.getElementById('newsUpdated');
+    const filt=document.getElementById('newsFilters');
+    if(!list) return;
+    if(NEWS_DATA===null){
+      list.innerHTML='<div class="news-empty">Loading the latest research…</div>';
+      fetch('data/news.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{NEWS_DATA=d;renderNews();})
+        .catch(()=>{NEWS_DATA={items:[]};renderNews();});
+      return;
+    }
+    const items=NEWS_DATA.items||[];
+    if(upd&&NEWS_DATA.generated) upd.textContent='Updated '+new Date(NEWS_DATA.generated+'T00:00:00').toLocaleDateString(undefined,{month:'long',day:'numeric',year:'numeric'});
+    // filters
+    if(filt&&!filt.dataset.built){
+      const cats=[['all','All'],['study','Papers'],['trial','Trials'],['regulatory','FDA']];
+      filt.innerHTML=cats.map(([k,l])=>`<button data-f="${k}" class="${k===NEWS_FILTER?'on':''}" onclick="setNewsFilter('${k}')">${l}</button>`).join('');
+      filt.dataset.built='1';
+    }
+    const shown=items.filter(i=>NEWS_FILTER==='all'||i.type===NEWS_FILTER);
+    list.innerHTML=shown.length?shown.map(newsItemHTML).join(''):'<div class="news-empty">No items in this filter yet — check back soon.</div>';
+    runReveal();
+  }
+  function setNewsFilter(f){
+    NEWS_FILTER=f;
+    document.querySelectorAll('#newsFilters button').forEach(b=>b.classList.toggle('on',b.dataset.f===f));
+    renderNews();
   }
 
   /* ---------- INIT ---------- */

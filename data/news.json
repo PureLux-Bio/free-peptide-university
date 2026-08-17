@@ -1,0 +1,514 @@
+{
+  "generated": "2026-08-17",
+  "count": 40,
+  "items": [
+    {
+      "id": "pubmed:42598626",
+      "source": "PubMed",
+      "type": "study",
+      "title": "Efficacy and safety of semaglutide injection in Indian patients with type 2 diabetes mellitus inadequately controlled on metformin: A phase 3, randomized, active-controlled, multicenter, non-inferiority trial (WIN-IND study)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42598626/",
+      "date": "2026-09-01",
+      "meta": "Metabolism open · 2026",
+      "tier": "Phase 3",
+      "terms": [
+        "semaglutide"
+      ]
+    },
+    {
+      "id": "pubmed:42598504",
+      "source": "PubMed",
+      "type": "study",
+      "title": "Insufficient exclusion of infectious and biofilm-related complications in reported tirzepatide-associated filler nodules",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42598504/",
+      "date": "2026-09-01",
+      "meta": "JAAD case reports · 2026",
+      "tier": "Study",
+      "terms": [
+        "tirzepatide"
+      ]
+    },
+    {
+      "id": "pubmed:42598502",
+      "source": "PubMed",
+      "type": "study",
+      "title": "Inflammation-mediated facial nodules to compounded tirzepatide",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42598502/",
+      "date": "2026-09-01",
+      "meta": "JAAD case reports · 2026",
+      "tier": "Study",
+      "terms": [
+        "tirzepatide"
+      ]
+    },
+    {
+      "id": "pubmed:42598160",
+      "source": "PubMed",
+      "type": "study",
+      "title": "Patient Experiences and Safety Concerns Regarding GLP-1 Receptor Agonists for Obesity: A Cross-Sectional Survey in Jeddah, Saudi Arabia",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42598160/",
+      "date": "2026-09-01",
+      "meta": "Saudi medical journal · 2026",
+      "tier": "Study",
+      "terms": [
+        "GLP-1 receptor agonist"
+      ]
+    },
+    {
+      "id": "pubmed:42605535",
+      "source": "PubMed",
+      "type": "study",
+      "title": "Efficacy of Luseogliflozin Added to Semaglutide in Patients With Metabolic Dysfunction-Associated Steatohepatitis and Type 2 Diabetes Mellitus: A Randomised, Open-Label Trial",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42605535/",
+      "date": "2026-08-17",
+      "meta": "Diabetes, obesity & metabolism · 2026",
+      "tier": "Study",
+      "terms": [
+        "semaglutide"
+      ]
+    },
+    {
+      "id": "nct:NCT07202247",
+      "source": "ClinicalTrials.gov",
+      "type": "trial",
+      "title": "Metabolic Interventions (Time-Restricted Eating, GLP1 Receptor Agonist, and Heart Healthy Diet) to Improve Cardiometabolic Health in Prostate Cancer Patients During Androgen Deprivation Therapy, IMPACT-ADT Trial",
+      "url": "https://clinicaltrials.gov/study/NCT07202247",
+      "date": "2026-08-17",
+      "meta": "Recruiting · NCT07202247",
+      "tier": "Phase 2",
+      "terms": [
+        "tirzepatide"
+      ]
+    },
+    {
+      "id": "nct:NCT07769047",
+      "source": "ClinicalTrials.gov",
+      "type": "trial",
+      "title": "Semaglutide and Structured Lifestyle Support to Improve Heart and Blood Vessel Health in Postmenopausal Obese Breast Cancer Survivors Taking Aromatase Inhibitors",
+      "url": "https://clinicaltrials.gov/study/NCT07769047",
+      "date": "2026-08-17",
+      "meta": "Not Yet Recruiting · NCT07769047",
+      "tier": "Phase 4",
+      "terms": [
+        "semaglutide"
+      ]
+    },
+    {
+      "id": "nct:NCT07767175",
+      "source": "ClinicalTrials.gov",
+      "type": "trial",
+      "title": "A First-in-human Research Study on How NNC0721-8060 Works in People Living With Overweight or Obesity",
+      "url": "https://clinicaltrials.gov/study/NCT07767175",
+      "date": "2026-08-17",
+      "meta": "Not Yet Recruiting · NCT07767175",
+      "tier": "Phase 1",
+      "terms": [
+        "semaglutide"
+      ]
+    },
+    {
+      "id": "nct:NCT07605052",
+      "source": "ClinicalTrials.gov",
+      "type": "trial",
+      "title": "A Research Study to Compare Blood Levels of Two Different Versions of Cagrilintide in Adults With Excess Body Weight",
+      "url": "https://clinicaltrials.gov/study/NCT07605052",
+      "date": "2026-08-17",
+      "meta": "Active Not Recruiting · NCT07605052",
+      "tier": "Phase 1",
+      "terms": [
+        "cagrilintide"
+      ]
+    },
+    {
+      "id": "pubmed:42606162",
+      "source": "PubMed",
+      "type": "study",
+      "title": "Practical considerations for the use of incretin mimetics in patients with neuroendocrine neoplasms: An expert consensus statement",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42606162/",
+      "date": "2026-08-15",
+      "meta": "Cancer · 2026",
+      "tier": "Preclinical",
+      "terms": []
+    },
+    {
+      "id": "pubmed:42603595",
+      "source": "PubMed",
+      "type": "study",
+      "title": "Co-Agonism of GLP-1R and CTR/AMYR in the Lateral Dorsal Tegmental Nucleus Produces Additive Effects on Homeostatic and Motivated Feeding",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42603595/",
+      "date": "2026-08-15",
+      "meta": "Physiology & behavior · 2026",
+      "tier": "Study",
+      "terms": []
+    },
+    {
+      "id": "pubmed:42603240",
+      "source": "PubMed",
+      "type": "study",
+      "title": "Effect of tirzepatide and semaglutide on blood pressure: A systematic review and meta-analysis",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42603240/",
+      "date": "2026-08-15",
+      "meta": "Endocrine · 2026",
+      "tier": "Meta-analysis",
+      "terms": [
+        "tirzepatide",
+        "semaglutide"
+      ]
+    },
+    {
+      "id": "pubmed:42601802",
+      "source": "PubMed",
+      "type": "study",
+      "title": "Gastric content and aspiration risk after semaglutide cessation: a reply",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42601802/",
+      "date": "2026-08-14",
+      "meta": "Anaesthesia · 2026",
+      "tier": "Preclinical",
+      "terms": [
+        "semaglutide"
+      ]
+    },
+    {
+      "id": "pubmed:42600923",
+      "source": "PubMed",
+      "type": "study",
+      "title": "Evaluation of tirzepatide as an adjunct to buprenorphine for the treatment of opioid use disorder (TAB) trial: study design and rationale",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42600923/",
+      "date": "2026-08-14",
+      "meta": "Contemporary clinical trials · 2026",
+      "tier": "Preclinical",
+      "terms": [
+        "tirzepatide"
+      ]
+    },
+    {
+      "id": "pubmed:42599381",
+      "source": "PubMed",
+      "type": "study",
+      "title": "Survodutide for Obesity in Chinese Adults: Phase 3 Randomized Trial Design and Baseline Characteristics (SYNCHRONIZE™-CN)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42599381/",
+      "date": "2026-08-14",
+      "meta": "Diabetes therapy : research, treatment and education of diabetes and related disorders · 2026",
+      "tier": "Phase 3",
+      "terms": [
+        "survodutide"
+      ]
+    },
+    {
+      "id": "pubmed:42599088",
+      "source": "PubMed",
+      "type": "study",
+      "title": "Liver Organoids: From Disease Modelling to Regenerative Medicine",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42599088/",
+      "date": "2026-08-14",
+      "meta": "Cell proliferation · 2026",
+      "tier": "Preclinical",
+      "terms": []
+    },
+    {
+      "id": "nct:NCT05132088",
+      "source": "ClinicalTrials.gov",
+      "type": "trial",
+      "title": "Research Study to Investigate How Well Semaglutide Tablets Taken Once Daily Work in East Asian People Who Are Overweight or Living With Obesity",
+      "url": "https://clinicaltrials.gov/study/NCT05132088",
+      "date": "2026-08-14",
+      "meta": "Completed · NCT05132088",
+      "tier": "Phase 3",
+      "terms": [
+        "semaglutide"
+      ]
+    },
+    {
+      "id": "nct:NCT05371496",
+      "source": "ClinicalTrials.gov",
+      "type": "trial",
+      "title": "Cardiac and Metabolic Effects of Semaglutide in Heart Failure With Preserved Ejection Fraction",
+      "url": "https://clinicaltrials.gov/study/NCT05371496",
+      "date": "2026-08-14",
+      "meta": "Completed · NCT05371496",
+      "tier": "Phase 4",
+      "terms": [
+        "semaglutide"
+      ]
+    },
+    {
+      "id": "nct:NCT06326047",
+      "source": "ClinicalTrials.gov",
+      "type": "trial",
+      "title": "A Research Study Comparing How Well Different Doses of the Medicine NN0519-0130 Lower Blood Sugar in People With Type 2 Diabetes",
+      "url": "https://clinicaltrials.gov/study/NCT06326047",
+      "date": "2026-08-13",
+      "meta": "Completed · NCT06326047",
+      "tier": "Phase 2",
+      "terms": [
+        "tirzepatide"
+      ]
+    },
+    {
+      "id": "nct:NCT05220917",
+      "source": "ClinicalTrials.gov",
+      "type": "trial",
+      "title": "Comparative Effectiveness and Safety of Four Second Line Pharmacological Strategies in Type 2 Diabetes Study",
+      "url": "https://clinicaltrials.gov/study/NCT05220917",
+      "date": "2026-08-13",
+      "meta": "Active Not Recruiting · NCT05220917",
+      "tier": "Trial",
+      "terms": [
+        "semaglutide"
+      ]
+    },
+    {
+      "id": "nct:NCT06269120",
+      "source": "ClinicalTrials.gov",
+      "type": "trial",
+      "title": "SEMA-CardioDiab HUNGARY: A Research Study to Understand the Effects of Oral Semaglutide on Blood Sugar Levels, Weight, and Cardiovascular Risk in People With Type 2 Diabetes Patients in Hungary",
+      "url": "https://clinicaltrials.gov/study/NCT06269120",
+      "date": "2026-08-13",
+      "meta": "Completed · NCT06269120",
+      "tier": "Trial",
+      "terms": [
+        "semaglutide"
+      ]
+    },
+    {
+      "id": "nct:NCT07087795",
+      "source": "ClinicalTrials.gov",
+      "type": "trial",
+      "title": "A Study to See the Effect of NNC0194-0499 Alone or in Combination With Semaglutide on Blood Sugar Control in People Living With Type 1 Diabetes",
+      "url": "https://clinicaltrials.gov/study/NCT07087795",
+      "date": "2026-08-13",
+      "meta": "Active Not Recruiting · NCT07087795",
+      "tier": "Phase 1",
+      "terms": [
+        "semaglutide"
+      ]
+    },
+    {
+      "id": "nct:NCT07046819",
+      "source": "ClinicalTrials.gov",
+      "type": "trial",
+      "title": "Tirzepatide in MetALD",
+      "url": "https://clinicaltrials.gov/study/NCT07046819",
+      "date": "2026-08-12",
+      "meta": "Recruiting · NCT07046819",
+      "tier": "Phase 2",
+      "terms": [
+        "tirzepatide"
+      ]
+    },
+    {
+      "id": "nct:NCT07463846",
+      "source": "ClinicalTrials.gov",
+      "type": "trial",
+      "title": "A Study to Evaluate ALN-2232 in Participants With Obesity",
+      "url": "https://clinicaltrials.gov/study/NCT07463846",
+      "date": "2026-08-12",
+      "meta": "Recruiting · NCT07463846",
+      "tier": "Phase 1",
+      "terms": [
+        "tirzepatide"
+      ]
+    },
+    {
+      "id": "nct:NCT07760532",
+      "source": "ClinicalTrials.gov",
+      "type": "trial",
+      "title": "Comparing Facial Aging Between Identical Twins With 3D Imaging",
+      "url": "https://clinicaltrials.gov/study/NCT07760532",
+      "date": "2026-08-12",
+      "meta": "Not Yet Recruiting · NCT07760532",
+      "tier": "Trial",
+      "terms": [
+        "tirzepatide"
+      ]
+    },
+    {
+      "id": "nct:NCT07734870",
+      "source": "ClinicalTrials.gov",
+      "type": "trial",
+      "title": "Tirzepatide for Treatment of CCCA",
+      "url": "https://clinicaltrials.gov/study/NCT07734870",
+      "date": "2026-08-12",
+      "meta": "Not Yet Recruiting · NCT07734870",
+      "tier": "Phase 2",
+      "terms": [
+        "tirzepatide"
+      ]
+    },
+    {
+      "id": "nct:NCT07758231",
+      "source": "ClinicalTrials.gov",
+      "type": "trial",
+      "title": "Impact of GLP-1 Receptor Agonist Therapy on Alcohol Pharmacokinetics",
+      "url": "https://clinicaltrials.gov/study/NCT07758231",
+      "date": "2026-08-11",
+      "meta": "Not Yet Recruiting · NCT07758231",
+      "tier": "Phase 1",
+      "terms": [
+        "tirzepatide",
+        "GLP-1 receptor agonist"
+      ]
+    },
+    {
+      "id": "nct:NCT06965413",
+      "source": "ClinicalTrials.gov",
+      "type": "trial",
+      "title": "A Study to Assess Efficacy, Safety, Tolerability, Pharmacokinetics (PK) and Pharmacodynamics (PD) of RO7204239 in Combination With Tirzepatide in Participants With Obesity or Overweight With At Least One Weight-related Comorbidity",
+      "url": "https://clinicaltrials.gov/study/NCT06965413",
+      "date": "2026-08-11",
+      "meta": "Active Not Recruiting · NCT06965413",
+      "tier": "Phase 2",
+      "terms": [
+        "tirzepatide"
+      ]
+    },
+    {
+      "id": "nct:NCT07752381",
+      "source": "ClinicalTrials.gov",
+      "type": "trial",
+      "title": "A Clinical Trial to Evaluate the Effects of Peptide Gummies on Markers of Inflammation, Physical Performance, and Recovery",
+      "url": "https://clinicaltrials.gov/study/NCT07752381",
+      "date": "2026-08-07",
+      "meta": "Completed · NCT07752381",
+      "tier": "Trial",
+      "terms": [
+        "BPC-157"
+      ]
+    },
+    {
+      "id": "nct:NCT07165028",
+      "source": "ClinicalTrials.gov",
+      "type": "trial",
+      "title": "A Master Protocol of Multiple Agents in Adults With Metabolic Dysfunction-Associated Steatotic Liver Disease (SYNERGY-Outcomes)",
+      "url": "https://clinicaltrials.gov/study/NCT07165028",
+      "date": "2026-08-06",
+      "meta": "Recruiting · NCT07165028",
+      "tier": "Phase 3",
+      "terms": [
+        "retatrutide"
+      ]
+    },
+    {
+      "id": "nct:NCT07629401",
+      "source": "ClinicalTrials.gov",
+      "type": "trial",
+      "title": "Pre-approval Expanded Access of Retatrutide (LY3437943)",
+      "url": "https://clinicaltrials.gov/study/NCT07629401",
+      "date": "2026-08-06",
+      "meta": "Available · NCT07629401",
+      "tier": "Trial",
+      "terms": [
+        "retatrutide"
+      ]
+    },
+    {
+      "id": "nct:NCT07220642",
+      "source": "ClinicalTrials.gov",
+      "type": "trial",
+      "title": "Weight Loss in People Living With Overweight or Obesity Following Treatment With Cagrilintide",
+      "url": "https://clinicaltrials.gov/study/NCT07220642",
+      "date": "2026-08-06",
+      "meta": "Active Not Recruiting · NCT07220642",
+      "tier": "Phase 3",
+      "terms": [
+        "cagrilintide"
+      ]
+    },
+    {
+      "id": "pubmed:42603384",
+      "source": "PubMed",
+      "type": "study",
+      "title": "Development and validation of a multiplexed LC-HRMS method for nine GLP-1 receptor agonists and its pharmaceutical application",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42603384/",
+      "date": "2026-07-21",
+      "meta": "Journal of chromatography. A · 2026",
+      "tier": "Study",
+      "terms": [
+        "GLP-1 receptor agonist"
+      ]
+    },
+    {
+      "id": "pubmed:42605357",
+      "source": "PubMed",
+      "type": "study",
+      "title": "Semaglutide for Refractory Reactive Hypoglycaemia: A Case Report",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42605357/",
+      "date": "2026-07-01",
+      "meta": "Cureus · 2026",
+      "tier": "Study",
+      "terms": [
+        "semaglutide"
+      ]
+    },
+    {
+      "id": "pubmed:42602535",
+      "source": "PubMed",
+      "type": "study",
+      "title": "Maximizing Metabolic Synergy: A Review of Dual Incretin Therapy as a Step-Up Strategy Following Glucagon-Like Peptide-1 (GLP-1) Monotherapy Failure or Optimization",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42602535/",
+      "date": "2026-07-01",
+      "meta": "Cureus · 2026",
+      "tier": "Preclinical",
+      "terms": []
+    },
+    {
+      "id": "pubmed:42604899",
+      "source": "PubMed",
+      "type": "study",
+      "title": "Beyond Small Molecules: Applying Fragment Molecular Orbital Sygnature Platform (FMO-SP) to Emerging Modalities",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42604899/",
+      "date": "2026-01-01",
+      "meta": "Methods in molecular biology (Clifton, N.J.) · 2026",
+      "tier": "Study",
+      "terms": []
+    },
+    {
+      "id": "pubmed:42602880",
+      "source": "PubMed",
+      "type": "study",
+      "title": "GLP-1-based incretin therapy is associated with lower incident Alzheimer's disease and cardiorenal events in adults with documented neuropsychiatric, cognitive, or sensory risk",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42602880/",
+      "date": "2026-01-01",
+      "meta": "Biology methods & protocols · 2026",
+      "tier": "Study",
+      "terms": []
+    },
+    {
+      "id": "pubmed:42602523",
+      "source": "PubMed",
+      "type": "study",
+      "title": "Glucagon-like peptide-1 and peptide YY multi-agonism with GEP44 to optimize weight loss and glycemic control while reducing gastrointestinal side effects: the future of anti-obesity pharmacotherapy?",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42602523/",
+      "date": "2026-01-01",
+      "meta": "Frontiers in endocrinology · 2026",
+      "tier": "Review",
+      "terms": []
+    },
+    {
+      "id": "pubmed:42602345",
+      "source": "PubMed",
+      "type": "study",
+      "title": "Validation of a Pharmacist-Led Semaglutide Prescribing Algorithm for Type 2 Diabetes and Chronic Kidney Disease: Research Letter",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42602345/",
+      "date": "2026-01-01",
+      "meta": "Canadian journal of kidney health and disease · 2026",
+      "tier": "Study",
+      "terms": [
+        "semaglutide"
+      ]
+    },
+    {
+      "id": "pubmed:42605954",
+      "source": "PubMed",
+      "type": "study",
+      "title": "Sex-based differences in clinical outcomes among patients with obesity and heart failure with preserved ejection fraction treated with tirzepatide",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42605954/",
+      "date": "2026",
+      "meta": "Therapeutic advances in cardiovascular disease · 2026",
+      "tier": "Study",
+      "terms": [
+        "tirzepatide"
+      ]
+    }
+  ]
+}
