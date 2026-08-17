@@ -406,5 +406,49 @@ COMPOUNDS = [
   },
 ]
 
+# ── Merge in the extended library (compounds_more.py) ───────────────────────
+import sys as _sys
+_sys.path.insert(0, HERE)
+try:
+    from compounds_more import MORE as _MORE
+except Exception as _e:  # pragma: no cover
+    print("compounds_more import failed:", _e)
+    _MORE = []
+
+_SEED = {}
+try:
+    for _s in json.load(open(os.path.join(HERE, "reference_seed.json"))):
+        _SEED[_s["n"].replace("&amp;", "&")] = _s.get("recon", "")
+except Exception:
+    pass
+
+
+def expand(m):
+    recon = _SEED.get(m["name"], "") or _SEED.get(m["name"].replace("&", "&amp;"), "")
+    sections = [
+        {"h": "What it is", "html": f"<p>{m['what']}</p>"},
+        {"h": "Proposed mechanism", "html": m["mech"]},
+        {"h": "State of the evidence", "html": m["evidence"]},
+        {"h": "Regulatory & status", "html": m["reg_html"]},
+    ]
+    if recon:
+        sections.append({"h": "Reconstitution (reference only)",
+                         "html": (f'<p>Lab-handling reference only — not a preparation or dosing '
+                                  f'instruction: {recon}. See the <a href="../index.html">reconstitution '
+                                  f'calculator</a> for the arithmetic. This page does not provide dosing guidance.</p>')})
+    d = {"slug": m["slug"], "name": m["name"],
+         "title": f"{m['name']}: Mechanism & Evidence",
+         "sub": m["sub"],
+         "desc": m.get("desc") or f"A cited, research-framed profile of {m['name']}: what it is, proposed mechanism, evidence tier, and regulatory status.",
+         "badges": {"class": m["cls"], "evidence": m["evi"], "eviCls": m.get("evicls", "b-evi"),
+                    "reg": m["reg"], "regCls": m.get("regcls", "b-reg")},
+         "ruo": m["ruo"], "sections": sections, "refs": m["refs"]}
+    if m.get("disc"):
+        d["discExtra"] = m["disc"]
+    return d
+
+
+COMPOUNDS += [expand(m) for m in _MORE]
+
 if __name__ == "__main__":
     main()
